@@ -34,7 +34,7 @@ pecl install xdebug
 ```
 
 ### Configure XDebug
-1. Edit `php.ini`
+Edit `php.ini`
 ```plaintext
 cd /opt/bitnami/php/etc/php.ini
 
@@ -45,7 +45,7 @@ xdebug.client_host=host.docker.internal
 xdebug.start_with_request=yes
 ```
 
-2. Copy and restart the container
+Copy and restart the container
 ```bash
 Copy code
 docker cp [container_id]:/opt/bitnami/ .
