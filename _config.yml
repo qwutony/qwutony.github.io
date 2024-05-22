@@ -5,7 +5,7 @@ baseurl:
 url: https://qwutony.github.io
 date_format: "ordinal"
 title: 
-subtitle: "Just a student with an interest in security"
+subtitle: "Security Blog - qwutony"
 description: "Just a student with an interest in security"
 keywords: Tony Wu, qwutony
 timezone: Australia/Melbourne
@@ -53,7 +53,7 @@ email: qwu.tony@gmail.com
 navs:
   -
     href: /
-    label: Main Page
+    label: Main
 
   -
     href: /categories/
@@ -66,7 +66,7 @@ navs:
 
   -
     href: /open-source/
-    label: Open-Source
+    label: Projects
     mobile-hidden: true
 
   -
