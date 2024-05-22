@@ -2,7 +2,7 @@
 layout: post
 title: "Customising SQLMap: Integrating Personalised Injection Payloads"
 categories: [SQLi]
-description: some word here
+description: Using SQLMap with personalised injection payloads
 keywords: SQL Injection, SQLMap, Inference
 mermaid: false
 sequence: false
@@ -19,7 +19,7 @@ We are familiar with the standard flag modifications that SQLMap provides to sca
 
 We can also use SQLMap tamper scripts to obfuscate the payload to bypass filters and WAFs, but there are times where these techniques do not provide complete coverage and identify the vulnerability.
 
-In that case, we can modify the payload XML files that SQLMap stores in their libexec directory and specify the exact payload that is required by adding an additional test case to the file. This was initially discussed in an SQLMap issue located here: https://github.com/sqlmapproject/sqlmap/issues/4091.
+In that case, we can modify the payload XML files that SQLMap stores in their libexec directory and specify the exact payload that is required by adding an additional test case to the file. This was initially discussed in an SQLMap issue located here: [sqlmapproject Issue #4091](https://github.com/sqlmapproject/sqlmap/issues/4091).
 
 **MacOS**
 For MacOS users that installed SQLMap via brew we can navigate to the following location to find the XML payload files:
