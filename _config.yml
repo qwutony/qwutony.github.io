@@ -35,7 +35,7 @@ components:
 compress_html:
   clippings: all
   comments: ["<!--", "-->"]
-highlight_theme: molokai
+highlight_theme: github
 
 # ---------------- #
 #      Author      #
