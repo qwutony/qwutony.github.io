@@ -1,13 +1,13 @@
 ---
 layout: wiki
-title: PHP WordPress Remote Debugging
+title: Remote Debugging - PHPStorm
 cate1: WordPress
 cate2: Debugging
 description: PHP WordPress Remote Debugging
 keywords: Debugging
 ---
 
-# PHP WordPress Remote Debugging
+# PHP WordPress Remote Debugging - PHPStorm
 
 ## Setup Instructions
 
