@@ -69,7 +69,7 @@ However, there are circumstances where the application fails to identify the vul
 
 This is the current prompt that is used for the script - if the LLM returns FALSE then no security vulnerability is identified, otherwise the response will be printed out into the console.
 
-> Scan the provided code chunk for security vulnerabilities - there is a high chance there are no vulnerabilities in the code. You MUST separate each security issue identified with the characters @@@@. Only respond with 'FALSE' if there are no vulnerabilities. If a security vulnerability is present, respond with 'TRUE' then the line numbers where the issue is identified, followed by the issue type in concise wording, and then finally the vulnerable code snippet but very concise. The response should be in the following format: TRUE | line_number(s) | issue_type | code_snippet."}
+> Scan the provided code chunk for security vulnerabilities - there is a high chance there are no vulnerabilities in the code. You MUST separate each security issue identified with the characters @@@@. Only respond with 'FALSE' if there are no vulnerabilities. If a security vulnerability is present, respond with 'TRUE' then the line numbers where the issue is identified, followed by the issue type in concise wording, and then finally the vulnerable code snippet but very concise. "The response should be in the following format: {TRUE | line_number(s) | issue_type | code_snippet."}"
 
 # Conclusion
 As LLMs continue to evolve and improve, there is greater opportunity to leverage these models to perform code scanning for security auditing purposes. While it is still in its infancy, there is potential that this form of code scanning could be useful for penetration testers and auditers in the future.
