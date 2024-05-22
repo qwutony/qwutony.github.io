@@ -15,7 +15,6 @@ repository: qwutony/qwutony.github.io
 cdn:
     jsdelivr:
         enabled: false
-# 可选组件配置
 components:
     share:
         enabled: false
