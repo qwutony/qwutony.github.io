@@ -1,9 +1,9 @@
 ---
 layout: post
 title: ServiceNow Insecure Access Control To Full Admin Takeover
-categories: [AI, Tools]
-description: AI code scanner
-keywords: Code Review, AI, Tools
+categories: [ServiceNow, Access Control, Admin Takeover]
+description: Insecure Access Control
+keywords: ServiceNow, Access Control
 mermaid: false
 sequence: false
 flow: false
