@@ -1,19 +1,15 @@
-- name: Software Engineer Keywords
+- name: Security Engineer (Core)
   keywords:
-      - Java
-      - C++
-      - Python
-      - Design Patterns
+      - Web Application Penetration Testing
+      - API Penetration Testing
+      - Network Penetration Testing
+      - Mobile Application Penetration Testing
+      - Wireless (Wi-Fi) Penetration Testing
+      - Secure Code Review
 
-- name: Mobile Developer Keywords
+- name: Security Engineer (Other)
   keywords:
-      - Android
-      - Reverse Engineering
-
-- name: Windows Developer Keywords
-  keywords:
-      - Win32 SDK
-      - DuiLib
-      - WTL
-      - COM
-      - WinDbg
+      - Security Tool Development, Automation and Scripting
+      - Social Engineering
+      - Incident Response
+      - Security Scoping and Risk Assessment
