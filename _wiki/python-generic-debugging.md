@@ -1,8 +1,8 @@
 ---
 layout: wiki
 title: Remote Debugging
-cate1: Python
-cate2: Debugging
+cate1: Debugging
+cate2: Python
 description: Remote Debugging - Python
 keywords: Debugging
 ---
