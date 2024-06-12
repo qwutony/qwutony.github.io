@@ -13,3 +13,4 @@ keywords: Internals
  - [BloodHound CE](https://github.com/SpecterOps/BloodHound)
  - WriteDACL
    - [WriteDACL - BloodHound](https://support.bloodhoundenterprise.io/hc/en-us/articles/17312765477787-WriteDacl)
+ - (DCSync - secretsdump)[https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/dcsync] 
