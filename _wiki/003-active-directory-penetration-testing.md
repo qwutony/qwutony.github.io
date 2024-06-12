@@ -7,11 +7,8 @@ description: Notes about Active Directory
 keywords: Internals
 ---
 
-# Active Directory Resources
+# Active Directory Exploitation Strategies
  - [ASREPRoasting via Impacket](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/asreproast)
- - [PowerView (Deprecated since 2021)](https://github.com/PowerShellMafia/PowerSploit/blob/dev/Recon/PowerView.ps1)
-   -  ```. .\powerview.ps1```
- - [BloodHound CE](https://github.com/SpecterOps/BloodHound)
  - **WriteDACL**
    - [WriteDACL - BloodHound](https://support.bloodhoundenterprise.io/hc/en-us/articles/17312765477787-WriteDacl)
  - [Abusing Active Directory ACLs/ACEs](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/acl-persistence-abuse)
@@ -27,7 +24,11 @@ keywords: Internals
     Get-DomainUser -Identity svc-alfresco
     Get-ObjectAcl -DistinguishedName "DC=htb,DC=local" -ResolveGUIDs | Where-Object { $_.IdentityReference -match "svc-alfresco" }
     ```
-
+## Active Directory Tools
+ - [PowerView (Deprecated since 2021)](https://github.com/PowerShellMafia/PowerSploit/blob/dev/Recon/PowerView.ps1)
+   -  ```. .\powerview.ps1```
+ - [BloodHound CE](https://github.com/SpecterOps/BloodHound)
+ - 
 ## Impacket Tools
   - **PSExec**
     - Shell access via SMB shares (Pass the Hash) 
