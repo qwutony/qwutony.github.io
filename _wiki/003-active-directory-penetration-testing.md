@@ -25,11 +25,14 @@ keywords: Internals
     Get-ObjectAcl -DistinguishedName "DC=htb,DC=local" -ResolveGUIDs | Where-Object { $_.IdentityReference -match "svc-alfresco" }
     ```
  - [SYSVOL Group Policy Credential Mining](https://adsecurity.org/?p=2288)
+   - ```gppdecrypt``` 
+
 ## Active Directory Tools
  - [PowerView (Deprecated since 2021)](https://github.com/PowerShellMafia/PowerSploit/blob/dev/Recon/PowerView.ps1)
    -  ```. .\powerview.ps1```
  - [BloodHound CE](https://github.com/SpecterOps/BloodHound)
  - 
+
 ## Impacket Tools
   - **PSExec**
     - Shell access via SMB shares (Pass the Hash) 
