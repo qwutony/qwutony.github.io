@@ -15,7 +15,7 @@ keywords: Internals
  - **WriteDACL**
    - [WriteDACL - BloodHound](https://support.bloodhoundenterprise.io/hc/en-us/articles/17312765477787-WriteDacl)
  - [Abusing Active Directory ACLs/ACEs](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/acl-persistence-abuse)
- - [NTLMRelay]([https://www.thehacker.recipes/ad/movement/ntlm/relay](https://en.hackndo.com/ntlm-relay/))
+ - [NTLMRelay](https://www.thehacker.recipes/ad/movement/ntlm/relay)
  - [DCSync - secretsdump](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/dcsync)
    - **With PowerView**:
     ```
