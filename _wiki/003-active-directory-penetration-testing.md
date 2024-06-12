@@ -52,3 +52,4 @@ keywords: Internals
  
 ## Resources
  - [The Hacker Recipes](https://www.thehacker.recipes/)
+ - [Active Directory Exploitation Cheat Sheet](https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet)
