@@ -8,6 +8,9 @@ keywords: Internals
 ---
 
 # Active Directory Enumeration
+[Password Spraying via Sprayhound](https://github.com/Hackndo/sprayhound)
+  - Checks badpwdcount attribute only in the domain policy
+
 [Rid Brute via SMB](https://medium.com/@e.escalante.jr/active-directory-workshop-brute-forcing-the-domain-server-using-crackmapexec-pt-6-feab1c43d970)
 
 **Requires:** Guest read access to IPC$ (Remote IPC) SMB File Share 
@@ -40,7 +43,7 @@ curl -L https://ghst.ly/getbhce | docker compose -f - up
 python3 bloodhound.py -u "support" -p "#00^BlackKnight" -c ALL -d BLACKFIELD.local -ns 10.10.10.192 -dc dc01.BLACKFIELD.local
 ```
 
-# Active Directory Exploitation Strategies
+# Active Directory Exploitation
 [ASREPRoasting via Impacket](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/asreproast)
 
 [WriteDACL - BloodHound](https://support.bloodhoundenterprise.io/hc/en-us/articles/17312765477787-WriteDacl)
