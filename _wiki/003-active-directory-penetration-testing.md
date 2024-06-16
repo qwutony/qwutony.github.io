@@ -53,18 +53,26 @@ Get-ObjectAcl -DistinguishedName "DC=htb,DC=local" -ResolveGUIDs | Where-Object 
 -----------------------------------------------------------------------
 
 ## Active Directory Tools
- - [PowerView (Deprecated since 2021)](https://github.com/PowerShellMafia/PowerSploit/blob/dev/Recon/PowerView.ps1)
-   -  ```. .\powerview.ps1```
- - [BloodHound CE](https://github.com/SpecterOps/BloodHound)
- - **NSE**
-   - ```--script smb-os-discovery,smb-enum-shares,smb-enum-users,smb-vuln*```
- - **SMB**
-   - Enum4Linux
-   - SMBMap
-   - smbclient
-   - smbclient.py (Impacket)
-   - [NetExec - Cheatsheet](https://github.com/BlWasp/NetExec-Cheatsheet)
-   - [SMB Enumeration Cheatsheet](https://0xdf.gitlab.io/2024/03/21/smb-cheat-sheet.html)
+[PowerView (Deprecated since 2021)](https://github.com/PowerShellMafia/PowerSploit/blob/dev/Recon/PowerView.ps1)
+```. .\powerview.ps1```
+
+[BloodHound CE](https://github.com/SpecterOps/BloodHound)
+
+**Installation via Docker:** [BloodHound Community Edition](https://support.bloodhoundenterprise.io/hc/en-us/articles/17468450058267-Install-BloodHound-Community-Edition-with-Docker-Compose)
+```
+curl -L https://ghst.ly/getbhce | docker compose -f - up
+```
+
+**NSE**
+```--script smb-os-discovery,smb-enum-shares,smb-enum-users,smb-vuln*```
+
+**SMB**
+Enum4Linux
+SMBMap
+smbclient
+smbclient.py (Impacket)
+[NetExec - Cheatsheet](https://github.com/BlWasp/NetExec-Cheatsheet)
+[SMB Enumeration Cheatsheet](https://0xdf.gitlab.io/2024/03/21/smb-cheat-sheet.html)
 
 ## Impacket Tools
   - **PSExec**
