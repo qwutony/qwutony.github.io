@@ -35,6 +35,7 @@ Other resources
 Old tool however useful if Bloodhound.py isn't working as intended.
 
 [Integrated DNS Dump](https://github.com/dirkjanm/adidnsdump)
+
 Any user in Active Directory can enumerate all DNS records in the Domain or Forest DNS zones, similar to a zone transfer.
 
 Additional Resources:
