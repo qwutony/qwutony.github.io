@@ -18,6 +18,28 @@ GetNPUsers.py BLACKFIELD/ -usersfile users.txt -format hashcat
 hashcat -m 18200 creds.txt /usr/share/wordlists/rockyou.txt
 ```
 
+[LDAPSearch Cheat Sheet](https://notes.benheater.com/books/active-directory/page/ldapsearch)
+```
+Domain Contexts: ldapsearch -x -H ldap://BLACKFIELD -s base namingcontexts
+Search Users: ldapsearch -x -H ldap://BLACKFIELD -D 'CN=support,CN=users,DC=BLACKFIELD,DC=local' -W -b 'DC=BLACKFIELD,DC=local' '(objectClass=user)'
+```
+
+[LDAP Domain Dump via Linux](https://github.com/dirkjanm/ldapdomaindump)
+
+Useful if Bloodhound.py isn't working as intended.
+
+[BloodHound CE](https://github.com/SpecterOps/BloodHound)
+
+**Installation via Docker:** [BloodHound Community Edition](https://support.bloodhoundenterprise.io/hc/en-us/articles/17468450058267-Install-BloodHound-Community-Edition-with-Docker-Compose)
+```
+curl -L https://ghst.ly/getbhce | docker compose -f - up
+```
+
+[BloodHound.py for Linux](https://github.com/dirkjanm/BloodHound.py)
+```
+python3 bloodhound.py -u "support" -p "#00^BlackKnight" -c ALL -d BLACKFIELD.local -ns 10.10.10.192 -dc dc01.BLACKFIELD.local
+```
+
 # Active Directory Exploitation Strategies
 [ASREPRoasting via Impacket](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/asreproast)
 
@@ -55,13 +77,6 @@ Get-ObjectAcl -DistinguishedName "DC=htb,DC=local" -ResolveGUIDs | Where-Object 
 ## Active Directory Tools
 [PowerView (Deprecated since 2021)](https://github.com/PowerShellMafia/PowerSploit/blob/dev/Recon/PowerView.ps1)
 ```. .\powerview.ps1```
-
-[BloodHound CE](https://github.com/SpecterOps/BloodHound)
-
-**Installation via Docker:** [BloodHound Community Edition](https://support.bloodhoundenterprise.io/hc/en-us/articles/17468450058267-Install-BloodHound-Community-Edition-with-Docker-Compose)
-```
-curl -L https://ghst.ly/getbhce | docker compose -f - up
-```
 
 **NSE**
 ```--script smb-os-discovery,smb-enum-shares,smb-enum-users,smb-vuln*```
