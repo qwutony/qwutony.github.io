@@ -28,7 +28,7 @@ Search Users: ldapsearch -x -H ldap://BLACKFIELD -D 'CN=support,CN=users,DC=BLAC
 ```
 
 Other resources
-  - https://podalirius.net/en/articles/useful-ldap-queries-for-windows-active-directory-pentesting/
+  - [Useful LDAP queries](https://podalirius.net/en/articles/useful-ldap-queries-for-windows-active-directory-pentesting/)
 
 [LDAP Domain Dump via Linux](https://github.com/dirkjanm/ldapdomaindump)
 
@@ -39,11 +39,14 @@ Old tool however useful if Bloodhound.py isn't working as intended.
 Any user in Active Directory can enumerate all DNS records in the Domain or Forest DNS zones, similar to a zone transfer.
 
 Additional Resources:
-  - https://dirkjanm.io/getting-in-the-zone-dumping-active-directory-dns-with-adidnsdump/
+  - [ADIDNS Dump](https://dirkjanm.io/getting-in-the-zone-dumping-active-directory-dns-with-adidnsdump/)
 
 [BloodHound CE](https://github.com/SpecterOps/BloodHound)
 
-**Installation via Docker:** [BloodHound Community Edition](https://support.bloodhoundenterprise.io/hc/en-us/articles/17468450058267-Install-BloodHound-Community-Edition-with-Docker-Compose)
+**Additional Resources** 
+  - [BloodHound Community Edition](https://support.bloodhoundenterprise.io/hc/en-us/articles/17468450058267-Install-BloodHound-Community-Edition-with-Docker-Compose)
+  - [BloodHound Cypher Cheatsheet](https://hausec.com/2019/09/09/bloodhound-cypher-cheatsheet/)
+    
 ```
 curl -L https://ghst.ly/getbhce | docker compose -f - up
 ```
