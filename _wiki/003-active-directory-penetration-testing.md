@@ -61,7 +61,8 @@ python3 bloodhound.py -u "support" -p "#00^BlackKnight" -c ALL -d BLACKFIELD.loc
   - IPv6/IPv4 LLMNR/NBT-NS/mDNS Poisoner and NTLMv1/2 Relay.
 
 ```
-hashcat -m 5600 --force -a 0 responder.hashes /usr/share/wordlists/rockyou.txt 
+hashcat -m 5600 --force -a 0 responder.hashes /usr/share/wordlists/rockyou.txt
+/opt/tools/Responder/ (location of Responder)
 ```
 
 # Active Directory Exploitation
