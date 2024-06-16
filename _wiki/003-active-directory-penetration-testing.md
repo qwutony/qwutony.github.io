@@ -9,6 +9,7 @@ keywords: Internals
 
 # Active Directory Enumeration
  - [Rid Brute via SMB](https://medium.com/@e.escalante.jr/active-directory-workshop-brute-forcing-the-domain-server-using-crackmapexec-pt-6-feab1c43d970)
+
    **Requires:** Guest read access to IPC$ (Remote IPC) SMB File Share 
    ```
    nxc smb 10.10.10.192 -u 'guest' -p '' --rid-brute > sid.txt
