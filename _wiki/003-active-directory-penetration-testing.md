@@ -50,6 +50,7 @@ python3 bloodhound.py -u "support" -p "#00^BlackKnight" -c ALL -d BLACKFIELD.loc
 [NTLMRelay](https://www.thehacker.recipes/ad/movement/ntlm/relay)
 
 [DCSync - secretsdump](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/dcsync)
+
 **With PowerView**:
 ```
 whoami /all
@@ -62,7 +63,6 @@ Get-ObjectAcl -DistinguishedName "DC=htb,DC=local" -ResolveGUIDs | Where-Object 
 ```
 
 [SYSVOL Group Policy Credential Mining](https://adsecurity.org/?p=2288)
-gppdecrypt
 
 [Kerberoasting](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/kerberoast)
 
