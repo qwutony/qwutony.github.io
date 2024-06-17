@@ -1,4 +1,4 @@
-![image](https://github.com/qwutony/qwutony.github.io/assets/45024645/960e64f3-ef46-4c6a-9461-c310355562fe)---
+---
 layout: wiki
 title: Internals - Active Directory Resources
 cate1: Internal
