@@ -1,4 +1,4 @@
----
+![image](https://github.com/qwutony/qwutony.github.io/assets/45024645/960e64f3-ef46-4c6a-9461-c310355562fe)---
 layout: wiki
 title: Internals - Active Directory Resources
 cate1: Internal
@@ -7,7 +7,7 @@ description: Notes about Active Directory
 keywords: Internals
 ---
 
-# Initial Enumeration
+# Initial Enumeration (without credentials)
 **[Password Spraying via Sprayhound](https://github.com/Hackndo/sprayhound)**
   - Checks badpwdcount attribute only in the domain policy
 
@@ -27,8 +27,17 @@ Domain Contexts: ldapsearch -x -H ldap://BLACKFIELD -s base namingcontexts
 Search Users: ldapsearch -x -H ldap://BLACKFIELD -D 'CN=support,CN=users,DC=BLACKFIELD,DC=local' -W -b 'DC=BLACKFIELD,DC=local' '(objectClass=user)'
 ```
 
+**[Share Enumeration]**
+```
+nxc smb [IP] --shares
+```
+
 Other resources
   - [Useful LDAP queries](https://podalirius.net/en/articles/useful-ldap-queries-for-windows-active-directory-pentesting/)
+
+# Initial Enumeration (with credentials - may also include other enumeration techniques from above)
+**[Impacket]**
+  - GetADUsers.py
 
 **[LDAP Domain Dump via Linux](https://github.com/dirkjanm/ldapdomaindump)**
 
@@ -63,6 +72,11 @@ python3 bloodhound.py -u "support" -p "#00^BlackKnight" -c ALL -d BLACKFIELD.loc
 ```
 hashcat -m 5600 --force -a 0 responder.hashes /usr/share/wordlists/rockyou.txt
 /opt/tools/Responder/ (location of Responder)
+```
+
+**[SMB Relay]**
+```
+nxc smb [IP] --gen-relay-list relay.txt
 ```
 
 # Active Directory Exploitation
