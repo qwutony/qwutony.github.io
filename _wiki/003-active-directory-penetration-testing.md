@@ -136,6 +136,8 @@ net rpc password AUDIT2020 -U BLACKFIELD\\support -S BLACKFIELD.local (prompts n
 Dumping LSASS via Linux: https://medium.com/@offsecdeer/dumping-lsass-remotely-from-linux-efc47391e56d
 ```
 
+**[Dumping Local SAM](https://www.ired.team/offensive-security/credential-access-and-credential-dumping/dumping-hashes-from-sam-registry)**
+
 **[Pypykatz - Mimikatz for Linux](https://github.com/skelsec/pypykatz)**
 
 **Requires:** A DMP file containing credentials extracted to our Linux machine.
