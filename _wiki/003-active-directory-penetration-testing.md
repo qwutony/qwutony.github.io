@@ -34,9 +34,10 @@ Search Users: ldapsearch -x -H ldap://BLACKFIELD -D 'CN=support,CN=users,DC=BLAC
 ```
 nxc smb [IP] --shares
 ```
-
 Other resources
   - [Useful LDAP queries](https://podalirius.net/en/articles/useful-ldap-queries-for-windows-active-directory-pentesting/)
+
+**[Bad PDF](https://github.com/deepzec/Bad-Pdf)**
 
 # Initial Enumeration (with credentials - may also include other enumeration techniques from above)
 **[Impacket]**
