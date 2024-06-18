@@ -65,6 +65,8 @@ curl -L https://ghst.ly/getbhce | docker compose -f - up
 ```
 
 **[BloodHound.py for Linux](https://github.com/dirkjanm/BloodHound.py)**
+**Additional Resources**
+  - [BloodHound.py for Bloodhound CE version](https://github.com/dirkjanm/BloodHound.py/tree/bloodhound-ce)
 ```
 python3 bloodhound.py -u "support" -p "#00^BlackKnight" -c ALL -d BLACKFIELD.local -ns 10.10.10.192 -dc dc01.BLACKFIELD.local
 proxychains bloodhound-python -u "web_svc"  -d 'painters.htb' -dc 'dc.painters.htb' --dns-tcp -c ALL -v -ns 192.168.110.55 [proxychains equivalent]
