@@ -7,6 +7,9 @@ description: Notes about Active Directory
 keywords: Internals
 ---
 
+# Cheat Sheets
+**[Wadcoms](https://wadcoms.github.io/)**
+
 # Initial Enumeration (without credentials)
 **[Password Spraying via Sprayhound](https://github.com/Hackndo/sprayhound)**
   - Checks badpwdcount attribute only in the domain policy
