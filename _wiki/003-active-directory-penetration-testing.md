@@ -137,6 +137,7 @@ Dumping LSASS via Linux: https://medium.com/@offsecdeer/dumping-lsass-remotely-f
 ```
 
 **[Dumping Local SAM](https://www.ired.team/offensive-security/credential-access-and-credential-dumping/dumping-hashes-from-sam-registry)**
+  - Crack SAM hashes: https://sanjumalhotra26.medium.com/dumping-credentials-from-sam-file-using-mimikatz-and-cracking-with-john-the-ripper-and-hashcat-ce5bbf2f4f5a
 
 **[Pypykatz - Mimikatz for Linux](https://github.com/skelsec/pypykatz)**
 
