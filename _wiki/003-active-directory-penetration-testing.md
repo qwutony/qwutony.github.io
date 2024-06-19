@@ -201,6 +201,16 @@ python3 -m pipx install impacket
     - Kerberos Pre-authentication disabled (ASREPRoasting)
 ```
 
+**[Network Pivoting - Ligolo-ng](https://software-sinner.medium.com/how-to-tunnel-and-pivot-networks-using-ligolo-ng-cf828e59e740)**
+
+```
+./agent -connect 10.10.14.5:443 -ignore-cert
+sudo ./proxy -selfcert -laddr 0.0.0.0:443 -v
+session
+start
+sudo ip route add 192.168.110.0/24 dev ligolo
+```
+
 ## Resources
  - [The Hacker Recipes](https://www.thehacker.recipes/)
  - [Active Directory Exploitation Cheat Sheet](https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet)
