@@ -248,7 +248,7 @@ Dumping LSASS via Linux: https://medium.com/@offsecdeer/dumping-lsass-remotely-f
 pypykatz lsa minidump lsass.DMP
 ```
 
-## Backup Operator
+## Abusing Backup Operators Group
 **[Backup Operator - Privilege Escalation](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/privileged-groups-and-token-privileges#backup-operators)**
 ```
 whoami /all (SeBackupPrivilege Enabled)
