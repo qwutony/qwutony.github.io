@@ -11,7 +11,7 @@ keywords: Internals
   - **[Wadcoms - Interactive Cheat Sheet for Active Directory](https://wadcoms.github.io/)**
   - **[Active Directory Enumeration Cheat Sheet](https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet)**
 
-# Domain Enumeration
+# Initial Access
 
 ## Password Spraying via Sprayhound
 **[Password Spraying via Sprayhound](https://github.com/Hackndo/sprayhound)**
@@ -30,11 +30,15 @@ hashcat -m 18200 creds.txt /usr/share/wordlists/rockyou.txt
 
 ## LDAP Enumeration
 **[LDAPSearch Enumeration](https://notes.benheater.com/books/active-directory/page/ldapsearch)**
+
 ```
 ldapsearch -x -H ldap://BLACKFIELD -s base namingcontexts (Domain Contexts)
 ldapsearch -x -H ldap://BLACKFIELD -D 'CN=support,CN=users,DC=BLACKFIELD,DC=local' -W -b 'DC=BLACKFIELD,DC=local' '(objectClass=user)' (Search Users)
 ldapsearch -H ldap://192.168.110.55 -x -D "web_svc@painters.htb" -W -b "dc=painters,dc=htb" "(msDS-AllowedToDelegateTo=*)" msDS-AllowedToDelegateTo (Constrained Delegation)
 ```
+
+**[LDAP Domain Dump via Linux](https://github.com/dirkjanm/ldapdomaindump)**
+  - Old tool however useful if Bloodhound.py isn't working as intended.
 
 **Additional resources**
   - [Useful LDAP queries](https://podalirius.net/en/articles/useful-ldap-queries-for-windows-active-directory-pentesting/)
@@ -56,39 +60,43 @@ nxc smb [IP] --shares
 **Additional Resources**
   - [Malicious PDF](https://github.com/jonaslejon/malicious-pdf)
 
-## **[Enumeration via Impacket](https://github.com/fortra/impacket)**
-  - GetADUsers.py
-
-**[LDAP Domain Dump via Linux](https://github.com/dirkjanm/ldapdomaindump)**
-
-Old tool however useful if Bloodhound.py isn't working as intended.
-
-**[Integrated DNS Dump](https://github.com/dirkjanm/adidnsdump)**
+## Integrated DNS Dump
+[Integrated DNS Dump](https://github.com/dirkjanm/adidnsdump)**
 
 Any user in Active Directory can enumerate all DNS records in the Domain or Forest DNS zones, similar to a zone transfer.
 
 Additional Resources:
   - [ADIDNS Dump](https://dirkjanm.io/getting-in-the-zone-dumping-active-directory-dns-with-adidnsdump/)
 
+# Domain Enumeration
+
+## Impacket (via Python)
+**[Enumeration via Impacket](https://github.com/fortra/impacket)**
+  - GetADUsers.py
+
+## Bloodhound
 **[BloodHound CE](https://github.com/SpecterOps/BloodHound)**
 
-**Additional Resources** 
-  - [BloodHound Community Edition](https://support.bloodhoundenterprise.io/hc/en-us/articles/17468450058267-Install-BloodHound-Community-Edition-with-Docker-Compose)
-  - [BloodHound Cypher Cheatsheet](https://hausec.com/2019/09/09/bloodhound-cypher-cheatsheet/)
-    
 ```
 curl -L https://ghst.ly/getbhce | docker compose -f - up
 ```
 
+**Additional Resources** 
+  - [BloodHound Community Edition](https://support.bloodhoundenterprise.io/hc/en-us/articles/17468450058267-Install-BloodHound-Community-Edition-with-Docker-Compose)
+  - [BloodHound Cypher Cheatsheet](https://hausec.com/2019/09/09/bloodhound-cypher-cheatsheet/)
+
 **[BloodHound.py for Linux](https://github.com/dirkjanm/BloodHound.py)**
+
 **Additional Resources**
   - [BloodHound.py for Bloodhound CE version](https://github.com/dirkjanm/BloodHound.py/tree/bloodhound-ce)
+
 ```
 python3 bloodhound.py -u "support" -p "#00^BlackKnight" -c ALL -d BLACKFIELD.local -ns 10.10.10.192 -dc dc01.BLACKFIELD.local
 proxychains bloodhound-python -u "web_svc"  -d 'painters.htb' -dc 'dc.painters.htb' --dns-tcp -c ALL -v -ns 192.168.110.55 [proxychains equivalent]
 ```
 
 # Poisoning and Relay
+## Responder
 **[Responder](https://github.com/lgandx/Responder)**
   - IPv6/IPv4 LLMNR/NBT-NS/mDNS Poisoner and NTLMv1/2 Relay.
 
@@ -97,6 +105,7 @@ hashcat -m 5600 --force -a 0 responder.hashes /usr/share/wordlists/rockyou.txt
 /opt/tools/Responder/ (location of Responder)
 ```
 
+## SMB Relay 
 **[SMB Relay]**
 ```
 nxc smb [IP] --gen-relay-list relay.txt
