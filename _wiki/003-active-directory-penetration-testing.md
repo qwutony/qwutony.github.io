@@ -8,41 +8,50 @@ keywords: Internals
 ---
 
 # Useful Resources
-**[Wadcoms - Interactive Cheat Sheet for Active Directory](https://wadcoms.github.io/)**
+  - **[Wadcoms - Interactive Cheat Sheet for Active Directory](https://wadcoms.github.io/)**
+  - **[Active Directory Enumeration Cheat Sheet](https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet)**
 
-# Enumeration
+# Domain Enumeration
 
 ## **[Password Spraying via Sprayhound](https://github.com/Hackndo/sprayhound)**
   - Checks badpwdcount attribute only in the domain policy
 
-**[Rid Brute via SMB](https://medium.com/@e.escalante.jr/active-directory-workshop-brute-forcing-the-domain-server-using-crackmapexec-pt-6-feab1c43d970)**
+## **[Rid Brute via SMB](https://medium.com/@e.escalante.jr/active-directory-workshop-brute-forcing-the-domain-server-using-crackmapexec-pt-6-feab1c43d970)**
 
 **Requires:** Guest read access to IPC$ (Remote IPC) SMB File Share 
 ```
 nxc smb 10.10.10.192 -u 'guest' -p '' --rid-brute > sid.txt
-cat sid.txt | awk -F': ' '{print $2}' | awk '{print $1}' | sed 's/BLACKFIELD\\//' > users.txt
-GetNPUsers.py BLACKFIELD/ -usersfile users.txt -format hashcat
+cat sid.txt | awk -F': ' '{print $2}' | awk '{print $1}' | sed 's/[DOMAIN]\\//' > users.txt
+GetNPUsers.py [DOMAIN]/ -usersfile users.txt -format hashcat
 hashcat -m 18200 creds.txt /usr/share/wordlists/rockyou.txt
 ```
 
-**[LDAPSearch Cheat Sheet](https://notes.benheater.com/books/active-directory/page/ldapsearch)**
+## **[LDAPSearch Enumeration](https://notes.benheater.com/books/active-directory/page/ldapsearch)**
 ```
 ldapsearch -x -H ldap://BLACKFIELD -s base namingcontexts (Domain Contexts)
 ldapsearch -x -H ldap://BLACKFIELD -D 'CN=support,CN=users,DC=BLACKFIELD,DC=local' -W -b 'DC=BLACKFIELD,DC=local' '(objectClass=user)' (Search Users)
 ldapsearch -H ldap://192.168.110.55 -x -D "web_svc@painters.htb" -W -b "dc=painters,dc=htb" "(msDS-AllowedToDelegateTo=*)" msDS-AllowedToDelegateTo (Constrained Delegation)
 ```
 
-**[Share Enumeration]**
+**Additional resources**
+  - [Useful LDAP queries](https://podalirius.net/en/articles/useful-ldap-queries-for-windows-active-directory-pentesting/)
+
+## **[SMB - Share Enumeration]**
 ```
 nxc smb [IP] --shares
 ```
-Other resources
-  - [Useful LDAP queries](https://podalirius.net/en/articles/useful-ldap-queries-for-windows-active-directory-pentesting/)
 
-**[Bad PDF](https://github.com/deepzec/Bad-Pdf)**
+**Additional Resources**
+  - [BIWasp/NetExec cheat sheet](https://github.com/BlWasp/NetExec-Cheatsheet)
+  - [SMB Enumeration cheat sheet](https://0xdf.gitlab.io/2024/03/21/smb-cheat-sheet.html)
+  - [CrackMapExec + NetExec cheat sheet](https://github.com/seriotonctf/cme-nxc-cheat-sheet)
 
-# Initial Enumeration (with credentials - may also include other enumeration techniques from above)
-**[Impacket]**
+## **[Bad PDF](https://github.com/deepzec/Bad-Pdf)**
+
+**Additional Resources**
+  - [Malicious PDF](https://github.com/jonaslejon/malicious-pdf)
+
+## **[Enumeration via Impacket]**
   - GetADUsers.py
 
 **[LDAP Domain Dump via Linux](https://github.com/dirkjanm/ldapdomaindump)**
