@@ -50,7 +50,7 @@ ldapsearch -H ldap://192.168.110.55 -x -D "web_svc@painters.htb" -W -b "dc=paint
 **Additional resources**
   - [Useful LDAP queries](https://podalirius.net/en/articles/useful-ldap-queries-for-windows-active-directory-pentesting/)
 
-## SMB - Share Enumeration
+## SMB Enumeration
 **[SMB - Share Enumeration](https://0xdf.gitlab.io/2024/03/21/smb-cheat-sheet.html)**
 ```
 nxc smb [IP] --shares
