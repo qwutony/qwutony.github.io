@@ -125,6 +125,13 @@ nxc smb [IP] --gen-relay-list relay.txt
 
 -----------------------------------------------------------------------
 
+# Local Privilege Escalation
+
+**Resources**
+  - [Privilege Escalation Useful Tools](https://github.com/nickvourd/Windows-Local-Privilege-Escalation-Cookbook?tab=readme-ov-file#useful-tools)
+  - [Exploitable Vulnerabilities](https://github.com/nickvourd/Windows-Local-Privilege-Escalation-Cookbook?tab=readme-ov-file#vulnerabilities)
+-----------------------------------------------------------------------
+
 # Domain Privilege Escalation
 ## ASREPRoasting
 **[ASREPRoasting via Impacket](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/asreproast)**
