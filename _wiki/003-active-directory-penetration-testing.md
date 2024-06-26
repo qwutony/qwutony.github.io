@@ -7,11 +7,12 @@ description: Notes about Active Directory
 keywords: Internals
 ---
 
-# Cheat Sheets
-**[Wadcoms](https://wadcoms.github.io/)**
+# Useful Resources
+**[Wadcoms - Interactive Cheat Sheet for Active Directory](https://wadcoms.github.io/)**
 
-# Initial Enumeration (without credentials)
-**[Password Spraying via Sprayhound](https://github.com/Hackndo/sprayhound)**
+# Enumeration
+
+## **[Password Spraying via Sprayhound](https://github.com/Hackndo/sprayhound)**
   - Checks badpwdcount attribute only in the domain policy
 
 **[Rid Brute via SMB](https://medium.com/@e.escalante.jr/active-directory-workshop-brute-forcing-the-domain-server-using-crackmapexec-pt-6-feab1c43d970)**
