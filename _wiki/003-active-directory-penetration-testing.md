@@ -13,10 +13,12 @@ keywords: Internals
 
 # Domain Enumeration
 
-## **[Password Spraying via Sprayhound](https://github.com/Hackndo/sprayhound)**
+## Password Spraying via Sprayhound
+**[Password Spraying via Sprayhound](https://github.com/Hackndo/sprayhound)**
   - Checks badpwdcount attribute only in the domain policy
 
-## **[Rid Brute via SMB](https://medium.com/@e.escalante.jr/active-directory-workshop-brute-forcing-the-domain-server-using-crackmapexec-pt-6-feab1c43d970)**
+## Rid Brute via SMB
+**[Rid Brute via SMB](https://medium.com/@e.escalante.jr/active-directory-workshop-brute-forcing-the-domain-server-using-crackmapexec-pt-6-feab1c43d970)**
 
 **Requires:** Guest read access to IPC$ (Remote IPC) SMB File Share 
 ```
@@ -26,7 +28,8 @@ GetNPUsers.py [DOMAIN]/ -usersfile users.txt -format hashcat
 hashcat -m 18200 creds.txt /usr/share/wordlists/rockyou.txt
 ```
 
-## **[LDAPSearch Enumeration](https://notes.benheater.com/books/active-directory/page/ldapsearch)**
+## LDAP Enumeration
+**[LDAPSearch Enumeration](https://notes.benheater.com/books/active-directory/page/ldapsearch)**
 ```
 ldapsearch -x -H ldap://BLACKFIELD -s base namingcontexts (Domain Contexts)
 ldapsearch -x -H ldap://BLACKFIELD -D 'CN=support,CN=users,DC=BLACKFIELD,DC=local' -W -b 'DC=BLACKFIELD,DC=local' '(objectClass=user)' (Search Users)
@@ -36,7 +39,8 @@ ldapsearch -H ldap://192.168.110.55 -x -D "web_svc@painters.htb" -W -b "dc=paint
 **Additional resources**
   - [Useful LDAP queries](https://podalirius.net/en/articles/useful-ldap-queries-for-windows-active-directory-pentesting/)
 
-## **[SMB - Share Enumeration](https://0xdf.gitlab.io/2024/03/21/smb-cheat-sheet.html)**
+## SMB - Share Enumeration
+**[SMB - Share Enumeration](https://0xdf.gitlab.io/2024/03/21/smb-cheat-sheet.html)**
 ```
 nxc smb [IP] --shares
 ```
@@ -46,7 +50,8 @@ nxc smb [IP] --shares
   - [SMB Enumeration cheat sheet](https://0xdf.gitlab.io/2024/03/21/smb-cheat-sheet.html)
   - [CrackMapExec + NetExec cheat sheet](https://github.com/seriotonctf/cme-nxc-cheat-sheet)
 
-## **[Bad PDF](https://github.com/deepzec/Bad-Pdf)**
+## Web Application Vulnerabilities
+**[Bad PDF](https://github.com/deepzec/Bad-Pdf)**
 
 **Additional Resources**
   - [Malicious PDF](https://github.com/jonaslejon/malicious-pdf)
