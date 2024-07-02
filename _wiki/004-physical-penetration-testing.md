@@ -10,6 +10,20 @@ keywords: Physical
 # Physical Penetration Testing
 Covert entry strategies to allow attackers to bypass physical security mechanisms to gain unauthorized entry to a building. Resources retrieved from various talks - credit provided below.
 
+## Checklist
+  - Hinge Inspection
+  - Latch Loiding (Door Latch)
+  - Crash Bars
+  - Deadbolts
+  - Door Edge Gap - Rex Sensors
+  - Door Levers (Handles)
+    - Over the Door Attacks
+    - Under the Door Attacks
+  - Triggering Sensors and Exit Mechanisms
+  - Stealing Keys
+  - Telephony Access Control Boxes
+  - Keyed-Alike Systems
+
 ## Covert Methods of Entry - Door Security
 Assess the physical security of doors to identify potential vulnerabilities that could be exploited by unauthorized individuals to gain access to secure areas.
 
@@ -87,7 +101,7 @@ Deadbolts are knobs on a door that can be turned with a thumb or key. They typic
 
 **Targets:** Deadbolt Mechanism
 
-### Door Edge Gap
+### Door Edge Gap - Rex Sensors
 
 **Vulnerability:** REX (Request to Exit) Sensors use passive IR (Infrared) to detect motion. This sensor attempts to detect motion by monitoring for temperature change, such as using canister gas or a stack of paper (sliding underneath).
 
@@ -98,7 +112,7 @@ Deadbolts are knobs on a door that can be turned with a thumb or key. They typic
 
 **Targets:** REX Sensor
 
-**Remediation:** Certain types of sensors now allow for microwave radar instead of just passive IR.
+**Remediation:** Certain types of sensors now allow for microwave radar instead of just passive IR. Security Astrogal for certain edges of the door.
 
 **Additional Resources:**
   - [White Oak Security - Bypassing Doors Rex Sensor](https://www.whiteoaksecurity.com/blog/bypassing-doors-part-3-rex-sensor/)
@@ -125,9 +139,42 @@ Deadbolts are knobs on a door that can be turned with a thumb or key. They typic
 
 <img width="354" alt="image" src="https://github.com/qwutony/qwutony.github.io/assets/45024645/653ffe7c-3f5e-4ac6-af0f-b7416fbf8e61">
 
+### Reaching Door Release
+  - Exit buttons
+
+### Magnetic Lock Systems
+  - Crash Bars
+  - Junction Boxes - can take these apart to release the door
+
+<img width="532" alt="image" src="https://github.com/qwutony/qwutony.github.io/assets/45024645/064e6065-38f5-413a-9bba-88636d7b4c35">
+
+### Key Lock Box
+  - Some combination key lock boxes only allow for unique numbers in each combination, which reduces a 4 digit lock to ~250 combinations
+  - Observe fingerprints to determine lock combinations
+  - Inserting a lock pick into a combination lock and rotating the last digit until compromise
+  - Bypassing wafer tumbler locks to access higher security keys
+
+**Additional Resources**
+  - [Hack a Key Lock Box](https://bugadvisor.com/2019/08/24/its-easy-to-hack-a-key-lock-box-theyre-not-as-secure-as-you-might-think/)
+  - [Bypassing Common Key Boxes](https://www.youtube.com/watch?v=-o_l69ZoKgs)
+
 ## Electronic Bypasses
 
-[TBD]
+### Cloning Electronic Credentials
+  - RFID Bypasses
+
+## Locks
+
+### Padlocks
+  - Padlock Shimming
+  - Dual Latch Padlocks
+  - Solution: Double-ball mechanism
+
+### Lockpicking
+  - Warded Locks
+<img width="521" alt="image" src="https://github.com/qwutony/qwutony.github.io/assets/45024645/7038bdb8-c44a-4530-8a35-3e286fa01820">
+  - Overlifting
+<img width="510" alt="image" src="https://github.com/qwutony/qwutony.github.io/assets/45024645/19fc6bbb-5521-432f-9665-0018d5552be1">
 
 ## Other Covert Entry Mechanisms
 Some niche but practical physical penetration testing strategies that are uncategorised but could potentially lead to covert access or escalation.
@@ -147,9 +194,6 @@ Some niche but practical physical penetration testing strategies that are uncate
   - C415A cabinets, A126 Linear elevators/misc, CH751 gas pumps/RVs/misc, 501CH cabinets/boxes, CC1 golf carts, 1284X Crown Victoria taxi/police, FEO-K1 fire/elevators, CG1 government, 2642 and 1620 fire/elevators.
 
 <img width="408" alt="image" src="https://github.com/qwutony/qwutony.github.io/assets/45024645/c166f313-f9ea-4603-bd4c-30f526c5cdad">
-
-## Lockpicking
-
 
 ## Credits
   - [Tactics of Physical Pen Testers](https://www.youtube.com/watch?v=VJ4FDOw9NcI)
