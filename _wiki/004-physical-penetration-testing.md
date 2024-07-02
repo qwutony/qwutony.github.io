@@ -87,6 +87,22 @@ Deadbolts are knobs on a door that can be turned with a thumb or key. They typic
 
 **Targets:** Deadbolt Mechanism
 
+### Door Edge Gap
+
+**Vulnerability:** REX (Request to Exit) Sensors use passive IR (Infrared) to detect motion. This sensor attempts to detect motion by monitoring for temperature change, such as using canister gas or a stack of paper (sliding underneath).
+
+**Requires:**
+  - Stack of paper
+  - Gas canister
+  - Vapes
+
+**Targets:** REX Sensor
+
+**Remediation:** Certain types of sensors now allow for microwave radar instead of just passive IR.
+
+**Additional Resources:**
+  - [White Oak Security - Bypassing Doors Rex Sensor](https://www.whiteoaksecurity.com/blog/bypassing-doors-part-3-rex-sensor/)
+
 ## Lockpicking
 
 
