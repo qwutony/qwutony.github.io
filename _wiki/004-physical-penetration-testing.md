@@ -10,7 +10,7 @@ keywords: Physical
 # Physical Penetration Testing
 Covert entry strategies to allow attackers to bypass physical security mechanisms to gain unauthorized entry to a building. Resources retrieved from various talks - credit provided below.
 
-## Door Security
+## Covert Methods of Entry - Door Security
 Assess the physical security of doors to identify potential vulnerabilities that could be exploited by unauthorized individuals to gain access to secure areas.
 
 ### Hinge Removal
@@ -102,6 +102,51 @@ Deadbolts are knobs on a door that can be turned with a thumb or key. They typic
 
 **Additional Resources:**
   - [White Oak Security - Bypassing Doors Rex Sensor](https://www.whiteoaksecurity.com/blog/bypassing-doors-part-3-rex-sensor/)
+
+### Door Levers - Handles
+
+**Vulnerability:** Modern door levers requires handles for accessibility and ease. We can bypass this by attempting to pull on the inside handle via an under/over the door tool.
+
+**Requires:**
+  - Under the door tool
+  - Film (over the door)
+
+**Targets:** 
+  - Modern door lever
+    - Under
+    - Over (Sometimes possible if the lever can be tilted upwards to open the door) 
+
+**Remediation:**
+  - Dynamic door bottoms
+  - Prevent access to the bottom of the door
+  - Shroud to prevent access to inside door lever
+  - Mounted door handles
+  - Clips
+
+<img width="354" alt="image" src="https://github.com/qwutony/qwutony.github.io/assets/45024645/653ffe7c-3f5e-4ac6-af0f-b7416fbf8e61">
+
+## Electronic Bypasses
+
+[TBD]
+
+## Other Covert Entry Mechanisms
+Some niche but practical physical penetration testing strategies that are uncategorised but could potentially lead to covert access or escalation.
+
+### Stealing Keys
+  - Keys that are left unguarded
+  - Lock boxes / Key boxes
+
+### Telephony Access Control Boxes
+  - Potentially uses the same key - e.g. A126 Linear Key
+  - Open the box to flip the relay - read the manual to bridge relays
+
+<img width="407" alt="image" src="https://github.com/qwutony/qwutony.github.io/assets/45024645/3d34b345-2f21-4d64-ab4f-4158db2eb1ee">
+
+### Keyed-Alike Systems
+  - [Common Keys to Purchase](https://gist.github.com/lrvick/a3ff4d7331acfe88ad8f0949439df81c#keys)
+  - C415A cabinets, A126 Linear elevators/misc, CH751 gas pumps/RVs/misc, 501CH cabinets/boxes, CC1 golf carts, 1284X Crown Victoria taxi/police, FEO-K1 fire/elevators, CG1 government, 2642 and 1620 fire/elevators.
+
+<img width="408" alt="image" src="https://github.com/qwutony/qwutony.github.io/assets/45024645/c166f313-f9ea-4603-bd4c-30f526c5cdad">
 
 ## Lockpicking
 
