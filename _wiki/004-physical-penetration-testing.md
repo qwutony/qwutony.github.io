@@ -24,7 +24,11 @@ Covert entry strategies to allow attackers to bypass physical security mechanism
   - Telephony Access Control Boxes
   - Keyed-Alike Systems
 
-## Covert Methods of Entry - Door Security
+## Covert Methods of Entry
+  - Tailgating if entrance gates take too long to close
+  - Hiding in the toilet / elevators
+
+## Door Security
 Assess the physical security of doors to identify potential vulnerabilities that could be exploited by unauthorized individuals to gain access to secure areas.
 
 ### Hinge Removal
@@ -139,6 +143,9 @@ Deadbolts are knobs on a door that can be turned with a thumb or key. They typic
 
 <img width="354" alt="image" src="https://github.com/qwutony/qwutony.github.io/assets/45024645/653ffe7c-3f5e-4ac6-af0f-b7416fbf8e61">
 
+### Door Frame
+  - Jacking and spreading attacks
+
 ### Reaching Door Release
   - Exit buttons
 
@@ -172,8 +179,11 @@ Deadbolts are knobs on a door that can be turned with a thumb or key. They typic
 
 ### Lockpicking
   - Warded Locks
+
 <img width="521" alt="image" src="https://github.com/qwutony/qwutony.github.io/assets/45024645/7038bdb8-c44a-4530-8a35-3e286fa01820">
+
   - Overlifting
+
 <img width="510" alt="image" src="https://github.com/qwutony/qwutony.github.io/assets/45024645/19fc6bbb-5521-432f-9665-0018d5552be1">
 
 ## Other Covert Entry Mechanisms
