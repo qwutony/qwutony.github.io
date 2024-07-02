@@ -153,3 +153,6 @@ Some niche but practical physical penetration testing strategies that are uncate
 
 ## Credits
   - [Tactics of Physical Pen Testers](https://www.youtube.com/watch?v=VJ4FDOw9NcI)
+
+## Other Resources
+  - [RTCG Training](https://www.redteamalliance.com/RTCG.html)
