@@ -10,7 +10,10 @@ keywords: Physical
 # Physical Penetration Testing
 Covert entry strategies to allow attackers to bypass physical security mechanisms to gain unauthorized entry to a building. Resources retrieved from various talks - credit provided below.
 
-## Hinge Removal
+## Door Security
+Assess the physical security of doors to identify potential vulnerabilities that could be exploited by unauthorized individuals to gain access to secure areas.
+
+### Hinge Removal
 Hinge removal is a common vulnerability in door security where an attacker removes the hinge pins, allowing the door to be lifted off its hinges.
 
 <img width="479" alt="image" src="https://github.com/qwutony/qwutony.github.io/assets/45024645/8d23d3c1-313c-4ce8-9436-729007deac44">
@@ -25,20 +28,21 @@ Hinge removal is a common vulnerability in door security where an attacker remov
   - Security Hinges
     - Use hinges with non-removable pins.
     - Opt for hinges with set screws that hold the pin in place.
-    - 
   - Jamb Pin Screws
     - Install jamb pin screws in the door and frame. These are screws that extend from the door into the frame, preventing the door from being lifted off even if the hinge pins are removed.
   - Reinforced Hinge Plates
     - Use reinforced hinge plates that provide additional security and make it more difficult to access and remove the pins.  
 
-## Door Latch
+### Door Latch
 Door latches can be vulnerable to unauthorized access if manipulated with specialized tools.
 
 <img width="397" alt="image" src="https://github.com/qwutony/qwutony.github.io/assets/45024645/65c8cfc8-dc2c-4b31-9da5-9ba63733d5bb">
 
 **Requires:** 
-  - Latch Tool (A specialized tool used to manipulate the latch mechanism of a door)
-  - Wires (Thin wires or other tools used to bypass protective plates and access the latch mechanism directly)
+  - Latch Tool
+    - A specialized tool used to manipulate the latch mechanism of a door.
+  - Wires
+    - Thin wires or other tools used to bypass protective plates and access the latch mechanism directly.
 
 **Targets:** Door Latches (can be manipulated to open the door without a key or proper access)
 
@@ -51,7 +55,7 @@ Door latches can be vulnerable to unauthorized access if manipulated with specia
 
 <img width="492" alt="image" src="https://github.com/qwutony/qwutony.github.io/assets/45024645/db59430e-2ed3-45f7-b29a-2bf4a6bdb423">
 
-## Crash Bars
+### Crash Bars
 Also known as push bars, panic bars or exit devices - used to allow quick egress in case of emergency. Consists of a horizontal bar spanning the width of the door that can be pushed from the inside to ensure a fast and efficient escape route.
 
 <img width="395" alt="image" src="https://github.com/qwutony/qwutony.github.io/assets/45024645/64e5a395-72d3-48d3-bcbc-409300508bbb">
@@ -62,7 +66,26 @@ Also known as push bars, panic bars or exit devices - used to allow quick egress
 
 **Targets:** Crash Bar
 
-**Remediation:** Dead Latch mechanism and not protective plates
+**Remediation:** 
+  - Alarmed exit devices
+  - Tamper-resistent crash bars with minimal exposed parts
+
+### Deadbolts
+Deadbolts are knobs on a door that can be turned with a thumb or key. They typically require a key to operate from the outside and a thumb turn or key on the inside.
+
+<img width="384" alt="image" src="https://github.com/qwutony/qwutony.github.io/assets/45024645/6b52302b-0978-4108-b27c-0457bf92123b">
+
+**Vulnerability:** Standard deadbolts can be susceptible to lock picking and bumping, allowing unauthorized individuals to unlock them without a key. 
+
+**Requires:**
+  - Thumb Turn Flipper
+  - Lock Picking Tools
+  - Bump Key
+  - Drill
+
+<img width="406" alt="image" src="https://github.com/qwutony/qwutony.github.io/assets/45024645/ea90a6e3-bb2c-49a3-a139-41b2f79f4a42">
+
+**Targets:** Deadbolt Mechanism
 
 ## Lockpicking
 
