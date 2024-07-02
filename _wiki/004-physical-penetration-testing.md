@@ -33,7 +33,7 @@ Hinge removal is a common vulnerability in door security where an attacker remov
   - Reinforced Hinge Plates
     - Use reinforced hinge plates that provide additional security and make it more difficult to access and remove the pins.  
 
-### Door Latch
+### Door Latch (Latch Loiding)
 Door latches can be vulnerable to unauthorized access if manipulated with specialized tools.
 
 <img width="397" alt="image" src="https://github.com/qwutony/qwutony.github.io/assets/45024645/65c8cfc8-dc2c-4b31-9da5-9ba63733d5bb">
