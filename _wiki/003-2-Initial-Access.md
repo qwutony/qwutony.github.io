@@ -1,13 +1,13 @@
 ---
 layout: wiki
-title: Initial Access
+title: Reconnaissance
 cate1: Internals
-cate2: 1
-description: Initial Access
+cate2: Step 1
+description: Reconnaissance
 keywords: Internals
 ---
 
-# Initial Access
+# Reconnaissance
 
 ## OSINT
 Generate Active Domain username conventions
