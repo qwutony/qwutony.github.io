@@ -1,9 +1,9 @@
 ---
 layout: wiki
-title: Reconnaissance
+title: Reconnaissance and Initial Access
 cate1: Internals
 cate2: Step 1
-description: Reconnaissance
+description: Reconnaissance and Initial Access
 keywords: Internals
 ---
 
@@ -12,16 +12,6 @@ keywords: Internals
 ## OSINT
 Generate Active Domain username conventions
   - [generate-ad-username](https://github.com/w0Tx/generate-ad-username)
-
-## Password Spraying
-**[Password Spraying via Sprayhound](https://github.com/Hackndo/sprayhound)**
-  - Checks badpwdcount attribute only in the domain policy
-
-**Additional Resources**
-  - [DomainPasswordSpray](https://github.com/dafthack/DomainPasswordSpray)
-  - [Invoke-CleverSpray](https://github.com/wavestone-cdt/Invoke-CleverSpray)
-  - [Spray](https://github.com/Greenwolf/Spray)
-  - [Hashcat Wordlists - InternalAllTheThings](https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/hash-cracking/#hashcat-install)
 
 ## SMB Enumeration
 **Nmap**
@@ -128,3 +118,29 @@ Any user in Active Directory can enumerate all DNS records in the Domain or Fore
 
 Additional Resources:
   - [ADIDNS Dump](https://dirkjanm.io/getting-in-the-zone-dumping-active-directory-dns-with-adidnsdump/)
+
+------------------------------------------------------------------
+
+# Initial Access
+
+## Password Spraying
+**[Password Spraying via Sprayhound](https://github.com/Hackndo/sprayhound)**
+  - Checks badpwdcount attribute only in the domain policy
+
+**Additional Resources**
+  - [DomainPasswordSpray](https://github.com/dafthack/DomainPasswordSpray)
+  - [Invoke-CleverSpray](https://github.com/wavestone-cdt/Invoke-CleverSpray)
+  - [Spray](https://github.com/Greenwolf/Spray)
+  - [Hashcat Wordlists - InternalAllTheThings](https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/hash-cracking/#hashcat-install)
+
+## ASREPRoasting
+**[ASREPRoasting via Impacket](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/asreproast)**
+
+ASREPRoast is a security attack that exploits users who lack the Kerberos pre-authentication required attribute. Essentially, this vulnerability allows attackers to request authentication for a user from the Domain Controller (DC) without needing the user's password. The DC then responds with a message encrypted with the user's password-derived key, which attackers can attempt to crack offline to discover the user's password.
+
+**Targets:** If a domain user account do not require kerberos preauthentication, we can request a valid TGT for this account without even having domain credentials, extract the encrypted blob and bruteforce it offline.
+
+```
+## Request AS_REP message
+python GetNPUsers.py [Domain]/ -usersfile usernames.txt -format hashcat -outputfile hashes.asreproast
+```
