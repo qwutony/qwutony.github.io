@@ -86,7 +86,13 @@ hashcat -m 18200 creds.txt /usr/share/wordlists/rockyou.txt
 ```
 
 ## LDAP Enumeration
-**[LDAPSearch Enumeration](https://notes.benheater.com/books/active-directory/page/ldapsearch)**
+**Nmap**
+
+```
+nmap -n -sV --script "ldap* and not brute" -p 389 <DC IP>
+```
+
+**LDAPSearch**
 
 ```
 ldapsearch -x -H ldap://BLACKFIELD -s base namingcontexts (Domain Contexts)
@@ -94,20 +100,25 @@ ldapsearch -x -H ldap://BLACKFIELD -D 'CN=support,CN=users,DC=BLACKFIELD,DC=loca
 ldapsearch -H ldap://192.168.110.55 -x -D "web_svc@painters.htb" -W -b "dc=painters,dc=htb" "(msDS-AllowedToDelegateTo=*)" msDS-AllowedToDelegateTo (Constrained Delegation)
 ```
 
-**[LDAP Domain Dump via Linux](https://github.com/dirkjanm/ldapdomaindump)**
-  - Old tool however useful if Bloodhound.py isn't working as intended.
-
 **Additional resources**
+  - [LDAPSearch Enumeration](https://notes.benheater.com/books/active-directory/page/ldapsearch)
   - [Useful LDAP queries](https://podalirius.net/en/articles/useful-ldap-queries-for-windows-active-directory-pentesting/)
+  - [LDAP Domain Dump via Linux](https://github.com/dirkjanm/ldapdomaindump)
+
+## Poisoning and Relay
+Refer to [Poisoning and Relay](https://qwutony.github.io/wiki/003-3-Poisoning-And-Relay/)
 
 ## Web Application Vulnerabilities
-**[Bad PDF](https://github.com/deepzec/Bad-Pdf)**
+**Bad PDF**
+Bad-PDF create malicious PDF file to steal NTLM(NTLMv1/NTLMv2) Hashes from windows machines, it utilize vulnerability disclosed by checkpoint team to create the malicious PDF file. Bad-Pdf reads the NTLM hashes using Responder listener.
 
 **Additional Resources**
   - [Malicious PDF](https://github.com/jonaslejon/malicious-pdf)
+  - [Bad PDF](https://github.com/deepzec/Bad-Pdf)
+  - [Bad PDF Checkpoint Research](https://research.checkpoint.com/ntlm-credentials-theft-via-pdf-files/)
 
 ## Integrated DNS Dump
-[Integrated DNS Dump](https://github.com/dirkjanm/adidnsdump)**
+**[Integrated DNS Dump](https://github.com/dirkjanm/adidnsdump)**
 
 Any user in Active Directory can enumerate all DNS records in the Domain or Forest DNS zones, similar to a zone transfer.
 
