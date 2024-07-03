@@ -9,6 +9,10 @@ keywords: Internals
 
 # Initial Access
 
+## OSINT
+Generate Active Domain username conventions
+  - [generate-ad-username](https://github.com/w0Tx/generate-ad-username)
+
 ## Password Spraying
 **[Password Spraying via Sprayhound](https://github.com/Hackndo/sprayhound)**
   - Checks badpwdcount attribute only in the domain policy
