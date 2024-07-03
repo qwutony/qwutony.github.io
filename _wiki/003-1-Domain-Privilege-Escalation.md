@@ -8,10 +8,6 @@ keywords: Internals
 ---
 
 # Domain Privilege Escalation
-## ASREPRoasting
-**[ASREPRoasting via Impacket](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/asreproast)**
-
-**Targets:** If a domain user account do not require kerberos preauthentication, we can request a valid TGT for this account without even having domain credentials, extract the encrypted blob and bruteforce it offline.
 
 ## Kerberoasting
 **[Kerberoasting](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/kerberoast)**
