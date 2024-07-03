@@ -2,7 +2,7 @@
 layout: wiki
 title: Initial Access
 cate1: Internals
-cate2: Active Directory
+cate2: 1
 description: Initial Access
 keywords: Internals
 ---
