@@ -2,8 +2,8 @@
 layout: wiki
 title: Lateral Movement
 cate1: Internals
-cate2: Active Directory
-description: 3
+cate2: Step 3
+description: Lateral Movement
 keywords: Internals
 ---
 
