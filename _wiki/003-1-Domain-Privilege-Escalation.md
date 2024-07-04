@@ -2,7 +2,7 @@
 layout: wiki
 title: Domain Privilege Escalation
 cate1: Internals
-cate2: Active Directory
+cate2: 4
 description: Domain Privilege Escalation
 keywords: Internals
 ---
