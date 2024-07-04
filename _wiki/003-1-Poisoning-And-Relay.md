@@ -2,7 +2,7 @@
 layout: wiki
 title: Poisoning and Relay
 cate1: Internals
-cate2: Active Directory
+cate2: 2
 description: Poisoning and Relay
 keywords: Internals
 ---
