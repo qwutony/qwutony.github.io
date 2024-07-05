@@ -10,7 +10,7 @@ keywords: Physical
 # Physical Security Auditing
 Covert entry strategies to allow attackers to bypass physical security mechanisms to gain unauthorized entry to a building. Resources retrieved from various talks - credit provided below.
 
-## Checklist
+## Auditing Checklist
   - Hinge Inspection
   - Latch Loiding (Door Latch)
   - Crash Bars
@@ -24,9 +24,102 @@ Covert entry strategies to allow attackers to bypass physical security mechanism
   - Telephony Access Control Boxes
   - Keyed-Alike Systems
 
-## Covert Methods of Entry
+-------------------------------------------------------------------------------------
+
+# Physical Security Auditing Theory
+
+## Pre-Engagement Requirements
+  - Floor Plans - Obtain detailed and updated floor plans of the facility including floors, rooms and access points.
+  - Policies and Procedures - Security policies and procedures, emergency response and evacuation plans.
+  - Security Systems Documentation - List of access control systems, CCTV, alarms, sensors etc. May require brand and type if necessary.
+  - Permission and Authorization - And a get out of jail free card!
+  - Scopes/Objectives/Rules of Engagement
+  - Scheduling and Timing (if necessary)
+
+## Reconnaissance and Observation
+During the beginning of the engagement, become hyperaware of the surrounding in and out of the target building. Document the information in the following format:
+  - Photographs and descriptions
+  - Detailed description of use, security features and potential vulnerabilities
+  - Observe usage patterns and time of day
+
+### Entry and Exit Points
+*Potentially include photography of all the interesting locations and document each point of entry and exit*
+  -  Main Entrances and Exits
+  -  Side or Secondary Entrances and Exits *(for employees, staff etc)*
+  -  Emergency Exits *(usually with crash bars)*
+  -  Fire Escapes
+  -  Accessible Windows *(Ground floor or other accessible windows)*
+  -  Roof Access Points *(Ladders, latches, doors that provide access to the roof)*
+  -  Loading Docks
+  -  Garage Doors
+  -  Large HVAC Vents/Ducts
+  -  Service Entrances and Exits
+  -  Basement Entrances and Exits
+  -  Gates and Fences
+
+### CCTV security cameras
+*Security cameras that monitor key access points in and out of a building with various functionality. This serves as an incomplete list of all the types of CCTV cameras to observe.*
+  - Dome Cameras *(Unable to determine the direction of the camera and angle)*
+
+<img width="240" alt="image" src="https://github.com/qwutony/qwutony.github.io/assets/45024645/237630e2-bc9c-413e-87ed-f61c0edc58c5">
+
+  - Bullet Cameras *(Long distance, good range and more capable outdoors)*
+
+<img width="180" alt="image" src="https://github.com/qwutony/qwutony.github.io/assets/45024645/d7c37997-7ec6-4ed6-a303-24cf8b3f8098">
+
+  - Pan-Tilt-Zoom (PTV) CCTV Cameras
+
+<img width="166" alt="image" src="https://github.com/qwutony/qwutony.github.io/assets/45024645/2fe31839-22a6-44c0-88db-101d79f3fb8c">
+
+  - Wireless Cameras
+
+<img width="121" alt="image" src="https://github.com/qwutony/qwutony.github.io/assets/45024645/421bb725-4063-4257-ba94-630e2194083e">
+
+  - Day and Night Security Cameras *(Works well in low light, record in colour and B/W, used for outdoor surveillance)*
+
+<img width="273" alt="image" src="https://github.com/qwutony/qwutony.github.io/assets/45024645/92384109-b3ea-493e-89c4-2ecd9b994d64">
+
+### Other Security Devices
+*Also document the location of other security devices.*
+  - Key Card Access Systems
+  - Biometric Access Systems
+  - Turnstiles and Security Gates
+  - Intrusion Detection Systems
+    - Motion Sensors
+    - Glass Break Sensors
+    - Door and Window Contacts
+    - Pressure Mats
+  - Intrusion Alarm Systems
+  - Barriers and Physical Obstructions
+  - Serveillance - *refer to CCTV cameras above*
+
+### Other Observations
+  - Employee behaviour
+  - Vulnerability / Blind spots and low traffic areas
+  - Key Locations
+  - Third Party Contractors (cleaners, security companies etc.)
+
+### People Watching
+  - Badge Behaviour
+  - Interaction Points
+  - Reaction towards foreign objects such as Key Loggers, MITM devices etc.
+
+---------------------------------------------------------------------------------------
+
+# Physical Security Attack Flow
+
+## Initial Access
   - Tailgating if entrance gates take too long to close
+  - Obtain visitor or temporary staff access via reception
+  - Unattended access points (backdoors, vents etc.) - refer to "Entry and Exit Points"
+
+## Privilege Escalation (Post Exploitation)
   - Hiding in the toilet / elevators
+  - Finding credentials near devices / workstations
+  - Stealing devices and objects from employees
+  - Door security
+
+---------------------------------------------------------------------------------------
 
 ## Door Security
 Assess the physical security of doors to identify potential vulnerabilities that could be exploited by unauthorized individuals to gain access to secure areas.
@@ -207,6 +300,7 @@ Some niche but practical physical penetration testing strategies that are uncate
 
 ## Credits
   - [Tactics of Physical Pen Testers](https://www.youtube.com/watch?v=VJ4FDOw9NcI)
+  - [Covert Access Team](https://covertaccessteam.substack.com/p/getting-started-with-physical-penetration)
 
 ## Other Resources
   - [RTCG Training](https://www.redteamalliance.com/RTCG.html)
