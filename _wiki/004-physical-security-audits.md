@@ -7,7 +7,7 @@ description: Physical Security Audits
 keywords: Physical
 ---
 
-# Physical Penetration Testing
+# Physical Security Auditing
 Covert entry strategies to allow attackers to bypass physical security mechanisms to gain unauthorized entry to a building. Resources retrieved from various talks - credit provided below.
 
 ## Checklist
