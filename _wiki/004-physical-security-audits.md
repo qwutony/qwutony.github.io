@@ -17,12 +17,20 @@ Covert entry strategies to allow attackers to bypass physical security mechanism
   - Deadbolts
   - Door Edge Gap - Rex Sensors
   - Door Levers (Handles)
-    - Over the Door Attacks
-    - Under the Door Attacks
+  - Over the Door Attacks
+  - Under the Door Attacks
   - Triggering Sensors and Exit Mechanisms
   - Stealing Keys
   - Telephony Access Control Boxes
   - Keyed-Alike Systems
+
+## To Bring Checklist
+  - Traveller Hook
+  - Air Wedge Bag
+  - Metal Coathanger (for REX buttons)
+  - Rope (UTD/OTD)
+  - Measuring Tape
+  - A4 Laminated Paper
 
 -------------------------------------------------------------------------------------
 
@@ -92,6 +100,12 @@ During the beginning of the engagement, become hyperaware of the surrounding in 
   - Intrusion Alarm Systems
   - Barriers and Physical Obstructions
   - Serveillance - *refer to CCTV cameras above*
+  - Exposed Ethernet Ports
+  - Accessible Office Technology
+  - Printers
+  - Light Controllers
+  - Magnetic Sensors
+  - Fire and Hazard Locations
 
 ### Other Observations
   - Employee behaviour
@@ -118,6 +132,12 @@ During the beginning of the engagement, become hyperaware of the surrounding in 
   - Finding credentials near devices / workstations
   - Stealing devices and objects from employees
   - Door security
+  - Access to sensitive locations
+    - Security lifts
+    - Server rooms
+    - Storage rooms
+    - Network ports and ethernet ports
+    - HVAC, electrical or engineering systems  
 
 ---------------------------------------------------------------------------------------
 
@@ -238,13 +258,17 @@ Deadbolts are knobs on a door that can be turned with a thumb or key. They typic
 
 ### Door Frame
   - Jacking and spreading attacks
+  - Can use air wedge to determine if latch attacks are effective
 
 ### Reaching Door Release
   - Exit buttons
+  - REX (Request to Exit) systems - can interact with it from outside of the door
 
 ### Magnetic Lock Systems
   - Crash Bars
   - Junction Boxes - can take these apart to release the door
+  - Throwing A4 laminated paper to trick infrared systems
+  - Measuring tape to trick infrared systems
 
 <img width="532" alt="image" src="https://github.com/qwutony/qwutony.github.io/assets/45024645/064e6065-38f5-413a-9bba-88636d7b4c35">
 
