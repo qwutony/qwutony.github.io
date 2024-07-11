@@ -330,6 +330,8 @@ Use a Network Tap such as the Dualcomm DCSW-1005PT to intercept legitimate traff
   - Connect Port 5 to mac for traffic replication
   - Ensure that the network tap is powered - either through mac or other energy source
 
+Use Wireshark to view and analyze the traffic. Possible to MAC spoof via the network tap by impersonating the intercepted device.
+
 ## Credits
   - [Tactics of Physical Pen Testers](https://www.youtube.com/watch?v=VJ4FDOw9NcI)
   - [Covert Access Team](https://covertaccessteam.substack.com/p/getting-started-with-physical-penetration)
