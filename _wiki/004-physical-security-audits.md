@@ -31,6 +31,7 @@ Covert entry strategies to allow attackers to bypass physical security mechanism
   - Rope (UTD/OTD)
   - Measuring Tape
   - A4 Laminated Paper
+  - Network Tap
 
 -------------------------------------------------------------------------------------
 
@@ -321,6 +322,13 @@ Some niche but practical physical penetration testing strategies that are uncate
   - C415A cabinets, A126 Linear elevators/misc, CH751 gas pumps/RVs/misc, 501CH cabinets/boxes, CC1 golf carts, 1284X Crown Victoria taxi/police, FEO-K1 fire/elevators, CG1 government, 2642 and 1620 fire/elevators.
 
 <img width="408" alt="image" src="https://github.com/qwutony/qwutony.github.io/assets/45024645/c166f313-f9ea-4603-bd4c-30f526c5cdad">
+
+## Network Tapping
+Use a Network Tap such as the Dualcomm DCSW-1005PT to intercept legitimate traffic flowing to and from devices.
+  - Connect Port 1 to printer for traffic passthrough
+  - Connect Port 2 to router or ethernet wall socket for traffic passthrough
+  - Connect Port 5 to mac for traffic replication
+  - Ensure that the network tap is powered - either through mac or other energy source
 
 ## Credits
   - [Tactics of Physical Pen Testers](https://www.youtube.com/watch?v=VJ4FDOw9NcI)
