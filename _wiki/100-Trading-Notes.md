@@ -10,6 +10,8 @@ keywords: checklist
 # Stock Market Trading Notes
 
 ## Daily Checklist
+
+### Chart Analysis
   - Volume Analysis
     - Mark the Previous Day Levels (pdHigh, pdVAH, pdPOC, pdEQ, pdVAL, pdLow)
     - Mark the Previous Week Levels (pwHigh, pwVAH, pwPOC, pwEQ, pwVAL, pwLow)
@@ -33,4 +35,18 @@ keywords: checklist
   - Funding
   - Set up all possible trade setups (Bullish or Bearish)
 
+### Confluence
+  - Determine multiple confluences
+  - Use multiple technical analysis tools to determine if they intersect around an area
+  - Increase the probability of trading using multiple confluences and simple invalidation
 
+## Consolidation Trading
+  - Consolidation above support is bullish, Consolidation below resistance is bearish.
+  - Observe BuF and BeF (Bull Flag and Bear Flags)
+  - Sideways Consolidation (Neutral)
+  - Sloping Channels (Can be unsustainable and broken)
+
+## Compounding Trading
+  - If position moves favourably, can look to add contracts at strong confluence levels.
+  - If position moves unfavourably, can look to add contracts at strong confluence levels and close AT BREAKEVEN to recover trade. Use only in exceptional cases.
+  - Laddering - entering into positions and exiting positions as a ladder and not all at once (ET1, ET2, ET3, TP1, TP2, TP3)
