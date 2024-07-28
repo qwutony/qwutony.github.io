@@ -40,6 +40,14 @@ keywords: checklist
   - Use multiple technical analysis tools to determine if they intersect around an area
   - Increase the probability of trading using multiple confluences and simple invalidation
 
+### Swing Failure Pattern
+  - Wait for highs/lows of range to be taken and determine if there is a reversal into the range.
+  - Wait for a retrace (using Fibonacci), to determine entry and take profit near the POC or bottom of range.
+
+### Fibonacci Levels
+  - Use these levels for confluence, but also determining take profit levels with negative Fibonacci levels.
+  - Do not use these as potential SLs.
+
 ## Consolidation Trading
   - Consolidation above support is bullish, Consolidation below resistance is bearish.
   - Observe BuF and BeF (Bull Flag and Bear Flags)
