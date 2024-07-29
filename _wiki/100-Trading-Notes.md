@@ -30,7 +30,7 @@ keywords: checklist
   - Previous Day/Week/Month OHLC (Open-High-Low-Close)
   - High Timeframe (HTF) Support and Resistance Levels (Daily, Monthly, Yearly etc)
   - Major Fibonacci Levels (Fib Levels, Fib Fans, Fib Channels)
-  - Unfinished Business (Gap Entrances, Gap Fills)
+  - Unfinished Business (Gap Entrances, Gap Fills, Equal Highs and Lows - eqHigh and eqLow)
   - Determine VWAP locations (sVWAP, aVWAP, wVWAP)
   - Determine the current Market Structure (Uptrend, Downtrend, Consolidation)
   - Elliot Wave Count
