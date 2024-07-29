@@ -12,6 +12,12 @@ keywords: checklist
 ## Daily Checklist
 
 ### Chart Analysis
+  - Patterns
+    - Flags
+    - Trianges + Wedges
+    - Head and Shoulders + Inverse Head and Shoulders Reversal
+    - Fibonacci Harmonics
+    - Three Drives Reversal
   - Volume Analysis
     - Mark the Previous Day Levels (pdHigh, pdVAH, pdPOC, pdEQ, pdVAL, pdLow)
     - Mark the Previous Week Levels (pwHigh, pwVAH, pwPOC, pwEQ, pwVAL, pwLow)
