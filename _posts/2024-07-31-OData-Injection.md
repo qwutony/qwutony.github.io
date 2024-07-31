@@ -17,7 +17,7 @@ OData (Open Data Protocol) according to [Microsoft](https://learn.microsoft.com/
 
 ## OData Query
 
-A complete query for OData looks like this (credits to [prospect365](https://docs.prospect365.com/en/articles/2455275-getting-started-with-the-odata-api):
+A complete query for OData looks like this (credits to [prospect365](https://docs.prospect365.com/en/articles/2455275-getting-started-with-the-odata-api)):
 
 ```
 https://odata-v1.example.com/Contacts
