@@ -2,10 +2,12 @@
   keywords:
       - Web Application Penetration Testing
       - API Penetration Testing
-      - Network Penetration Testing
-      - Mobile Application Penetration Testing
+      - Network / Infrastructure Penetration Testing
+      - Mobile (Android) Application Penetration Testing
       - Wireless (Wi-Fi) Penetration Testing
       - Secure Code Review
+      - Physical Security Auditing
+      - Active Directory and Internal Penetration Testing
 
 - name: Security Engineer (Other)
   keywords:
