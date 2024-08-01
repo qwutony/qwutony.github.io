@@ -33,6 +33,8 @@ keywords: checklist
   - Major Fibonacci Levels (Fib Levels, Fib Fans, Fib Channels)
   - Unfinished Business (Gap Entrances, Gap Fills, Equal Highs and Lows - eqHigh and eqLow)
   - Determine VWAP locations (sVWAP, aVWAP, wVWAP)
+  - On-Balance Volume
+  - Order Blocks and Clusters (0.25)
   - Determine the current Market Structure (Uptrend, Downtrend, Consolidation)
   - Elliot Wave Count
   - High Volume Nodes
