@@ -1,3 +1,6 @@
 - name: Antivirus and EDR Bypass Techniques
   url: https://www.vaadata.com/blog/antivirus-and-edr-bypass-techniques/
   src: life
+- name: Snake&Apple MacOS Security Series
+  url: https://github.com/Karmaz95/Snake_Apple?tab=readme-ov-file
+  src: life
