@@ -7,3 +7,6 @@
 - name: Circumventing Medium Paywall
   url: https://freedium.cfd/
   src: life
+- name: Finding Gaps in Azure/O365 MFA (FindMeAccess)
+  url: https://github.com/absolomb/FindMeAccess
+  src: life
