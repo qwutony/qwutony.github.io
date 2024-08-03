@@ -56,6 +56,7 @@ As we are short term / swing traders, we take different risk management paramete
     - Mark the naked volume Monthly levels (dnPOC, dwPOC, dmPOC, sPOC)
     - Only consider longs at or below VAL, only consider shorts at or below VAH, only take profit at POC but don't take positions (remember the -$5000 position on QQQ)
     - Previously broken VAL/VAH/POC can be used as support/resistance flips
+    - POC is where most traders entered positions - if they are incorrect and the price revisits the untested POC, it is likely they will mitigate losses at breakeven therefore creating a support/resistance area
   - Context Awareness
     - Check the speed and momentum of the price action (this may indicate breaking of the range or continuation)
   - Patterns
