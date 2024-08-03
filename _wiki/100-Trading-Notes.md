@@ -10,9 +10,17 @@ keywords: checklist
 # Stock Market Trading Notes
 
 ## Daily Checklist
+Momentum provides direction.
+
+Volume provides entries.
+
+Fibonacci provides confluence.
 
 ### Risk Management
-No trade is perfect and no analysis is bulletproof. We need therefore to manage our risk effectively to preserve capital, especially when trading leveraged products such as CFDs, futures and options. There is a fine line between a trader and a gambler - traders are risk managers who can take appropriate actions to improve their chances to control chaos; gamblers choose to take risk without insight, researcher and use only luck.
+No trade is perfect and no analysis is bulletproof. We need therefore to manage our risk effectively to preserve capital, especially when trading leveraged products such as CFDs, futures and options. 
+
+There is a fine line between a trader and a gambler - traders are risk managers who can take appropriate actions to improve their chances to control chaos; gamblers choose to take risk without insight, researcher and use only luck.
+
   - Define an appropriate **max percentage drawdown** of the account prior to entering a trade - this should be based on risk tolerance. This is not the same as how much of a product to purchase, but rather how much to lose before exit. 5% is a reasonable amount if the trader has a large risk appetite. 5% of $20,000 is a $1,000 loss on a position before stop loss. Remember all the failed SPY and QQQ trades?
   - If the trade is in drawdown, we can **average down** ONLY AT MAJOR CONFLUENCE LEVELS and take partial profits when the new contracts are profitable (add risk and then reduce risk).
   - If a trade is in profit, we can set three **profit targets**, such as nearest VAL/VAH/POC, major confluence levels and support/resistance zones. Not taking profit risks a trade failing and entering drawdown. Rememeber AAPL and NVAX?
@@ -25,7 +33,9 @@ No trade is perfect and no analysis is bulletproof. We need therefore to manage 
 
 **Options Risk Management**
 Use [Options Trade Optimiser](https://optionstrat.com/optimize)
+
 As we are short term / swing traders, we take different risk management parameters than long term traders.
+
   - Standard trade: BUY ATM CALL or BUY ATM PUT at least 3 WEEKS out
     - IF +DIRECTIONAL
     - ATM options have DELTA@0.5 and benefits directionally
