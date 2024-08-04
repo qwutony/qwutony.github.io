@@ -144,7 +144,7 @@ As we are short term / swing traders, we take different risk management paramete
 
 ```pinescript
 //@version=5
-indicator("Katsu TA", overlay=true)
+indicator("Katsu TA - Combined", overlay=true)
 
 high_month = request.security(syminfo.tickerid, "M", high[1], lookahead=barmerge.lookahead_on)
 low_month = request.security(syminfo.tickerid, "M", low[1], lookahead=barmerge.lookahead_on)
@@ -156,10 +156,15 @@ low_week = request.security(syminfo.tickerid, "W", low[1], lookahead=barmerge.lo
 open_week = request.security(syminfo.tickerid, "W", open[1], lookahead=barmerge.lookahead_on)
 close_week = request.security(syminfo.tickerid, "W", close[1], lookahead=barmerge.lookahead_on)
 
+high_day = request.security(syminfo.tickerid, "D", high[1], lookahead=barmerge.lookahead_on)
+low_day = request.security(syminfo.tickerid, "D", low[1], lookahead=barmerge.lookahead_on)
+open_day = request.security(syminfo.tickerid, "D", open[1], lookahead=barmerge.lookahead_on)
+close_day = request.security(syminfo.tickerid, "D", close[1], lookahead=barmerge.lookahead_on)
+
 targetDate = time >= timestamp(year(timenow), month(timenow), 1, 0, 0, 0)
 beginMonth = not targetDate[1] and targetDate
-
 prevWeekStart = time >= timestamp(year(timenow), month(timenow), dayofmonth(timenow) - dayofweek + 1, 0, 0)
+newDay = dayofweek != dayofweek[1]
 
 var line l_high_month = na
 var line l_low_month = na
@@ -169,6 +174,10 @@ var line l_high_week = na
 var line l_low_week = na
 var line l_open_week = na
 var line l_close_week = na
+var line l_high_day = na
+var line l_low_day = na
+var line l_open_day = na
+var line l_close_day = na
 
 var label lbl_high_month = na
 var label lbl_low_month = na
@@ -178,56 +187,67 @@ var label lbl_high_week = na
 var label lbl_low_week = na
 var label lbl_open_week = na
 var label lbl_close_week = na
+var label lbl_high_day = na
+var label lbl_low_day = na
+var label lbl_open_day = na
+var label lbl_close_day = na
 
 if (beginMonth)
     l_high_month := line.new(bar_index, high_month, bar_index+1, high_month, extend=extend.both, color=color.white, style=line.style_dotted)
     lbl_high_month := label.new(bar_index, high_month, text="pmHighs", color=color.white, textcolor=color.white, style=label.style_none, size=size.small)
-    
     line.delete(l_high_month[1])
     label.delete(lbl_high_month[1])
 
     l_low_month := line.new(bar_index, low_month, bar_index+1, low_month, extend=extend.both, color=color.white, style=line.style_dotted)
     lbl_low_month := label.new(bar_index, low_month, text="pmLows", color=color.white, textcolor=color.white, style=label.style_none, size=size.small)
-    
     line.delete(l_low_month[1])
     label.delete(lbl_low_month[1])
 
     l_open_month := line.new(bar_index, open_month, bar_index+1, open_month, extend=extend.both, color=color.white, style=line.style_dotted)
     lbl_open_month := label.new(bar_index, open_month, text="pmOpen", color=color.white, textcolor=color.white, style=label.style_none, size=size.small)
-    
     line.delete(l_open_month[1])
     label.delete(lbl_open_month[1])
 
     l_close_month := line.new(bar_index, close_month, bar_index+1, close_month, extend=extend.both, color=color.white, style=line.style_dotted)
     lbl_close_month := label.new(bar_index, close_month, text="pmClose", color=color.white, textcolor=color.white, style=label.style_none, size=size.small)
-    
     line.delete(l_close_month[1])
     label.delete(lbl_close_month[1])
 
 if (prevWeekStart)
     l_high_week := line.new(bar_index, high_week, bar_index+1, high_week, extend=extend.both, color=color.white, style=line.style_dotted)
     lbl_high_week := label.new(bar_index, high_week, text="pwHighs", color=color.white, textcolor=color.white, style=label.style_none, size=size.small)
-
     l_low_week := line.new(bar_index, low_week, bar_index+1, low_week, extend=extend.both, color=color.white, style=line.style_dotted)
     lbl_low_week := label.new(bar_index, low_week, text="pwLows", color=color.white, textcolor=color.white, style=label.style_none, size=size.small)
-
     l_open_week := line.new(bar_index, open_week, bar_index+1, open_week, extend=extend.both, color=color.white, style=line.style_dotted)
     lbl_open_week := label.new(bar_index, open_week, text="pwOpen", color=color.white, textcolor=color.white, style=label.style_none, size=size.small)
-
     l_close_week := line.new(bar_index, close_week, bar_index+1, close_week, extend=extend.both, color=color.white, style=line.style_dotted)
     lbl_close_week := label.new(bar_index, close_week, text="pwClose", color=color.white, textcolor=color.white, style=label.style_none, size=size.small)
-
     line.delete(l_high_week[1])
     label.delete(lbl_high_week[1])
-
     line.delete(l_low_week[1])
     label.delete(lbl_low_week[1])
-
     line.delete(l_open_week[1])
     label.delete(lbl_open_week[1])
-
     line.delete(l_close_week[1])
     label.delete(lbl_close_week[1])
+
+if (newDay)
+    l_high_day := line.new(bar_index, high_day, bar_index+1, high_day, extend=extend.both, color=color.white, style=line.style_dotted)
+    lbl_high_day := label.new(bar_index, high_day, text="pdHigh", color=color.white, textcolor=color.white, style=label.style_none, size=size.small)
+    l_low_day := line.new(bar_index, low_day, bar_index+1, low_day, extend=extend.both, color=color.white, style=line.style_dotted)
+    lbl_low_day := label.new(bar_index, low_day, text="pdLow", color=color.white, textcolor=color.white, style=label.style_none, size=size.small)
+    l_open_day := line.new(bar_index, open_day, bar_index+1, open_day, extend=extend.both, color=color.white, style=line.style_dotted)
+    lbl_open_day := label.new(bar_index, open_day, text="pdOpen", color=color.white, textcolor=color.white, style=label.style_none, size=size.small)
+    l_close_day := line.new(bar_index, close_day, bar_index+1, close_day, extend=extend.both, color=color.white, style=line.style_dotted)
+    lbl_close_day := label.new(bar_index, close_day, text="pdClose", color=color.white, textcolor=color.white, style=label.style_none, size=size.small)
+    line.delete(l_high_day[1])
+    label.delete(lbl_high_day[1])
+    line.delete(l_low_day[1])
+    label.delete(lbl_low_day[1])
+    line.delete(l_open_day[1])
+    label.delete(lbl_open_day[1])
+    line.delete(l_close_day[1])
+    label.delete(lbl_close_day[1])
 
 plotshape(beginMonth, "T", shape.triangleup, location.belowbar, size=size.small)
 ```
