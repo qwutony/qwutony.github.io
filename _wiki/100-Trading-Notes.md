@@ -139,3 +139,58 @@ As we are short term / swing traders, we take different risk management paramete
   - If position moves favourably, can look to add contracts at strong confluence levels.
   - If position moves unfavourably, can look to add contracts at strong confluence levels and close AT BREAKEVEN to recover trade. Use only in exceptional cases.
   - Laddering - entering into positions and exiting positions as a ladder and not all at once (ET1, ET2, ET3, TP1, TP2, TP3)
+
+## Trading Script
+
+```pinescript
+//@version=5
+indicator("Katsu TA", overlay=true)
+
+high_month = request.security(syminfo.tickerid, "M", high[1], lookahead=barmerge.lookahead_on)
+low_month = request.security(syminfo.tickerid, "M", low[1], lookahead=barmerge.lookahead_on)
+high_week = request.security(syminfo.tickerid, "W", high[1], lookahead=barmerge.lookahead_on)
+low_week = request.security(syminfo.tickerid, "W", low[1], lookahead=barmerge.lookahead_on)
+
+targetDate = time >= timestamp(year(timenow), month(timenow), 1, 0, 0, 0)
+beginMonth = not targetDate[1] and targetDate
+
+prevWeekStart = time >= timestamp(year(timenow), month(timenow), dayofmonth(timenow) - dayofweek + 1, 0, 0)
+
+var line l_high_month = na
+var line l_low_month = na
+var line l_high_week = na
+var line l_low_week = na
+
+var label lbl_high_month = na
+var label lbl_low_month = na
+var label lbl_high_week = na
+var label lbl_low_week = na
+
+if (beginMonth)
+    l_high_month := line.new(bar_index, high_month, bar_index+1, high_month, extend=extend.both, color=color.white, style=line.style_dotted)
+    lbl_high_month := label.new(bar_index, high_month, text="pmHighs", color=color.white, textcolor=color.white, style=label.style_none, size=size.small)
+    
+    line.delete(l_high_month[1])
+    label.delete(lbl_high_month[1])
+
+    l_low_month := line.new(bar_index, low_month, bar_index+1, low_month, extend=extend.both, color=color.white, style=line.style_dotted)
+    lbl_low_month := label.new(bar_index, low_month, text="pmLows", color=color.white, textcolor=color.white, style=label.style_none, size=size.small)
+    
+    line.delete(l_low_month[1])
+    label.delete(lbl_low_month[1])
+
+if (prevWeekStart)
+    l_high_week := line.new(bar_index, high_week, bar_index+1, high_week, extend=extend.both, color=color.white, style=line.style_dotted)
+    lbl_high_week := label.new(bar_index, high_week, text="pwHighs", color=color.white, textcolor=color.white, style=label.style_none, size=size.small)
+
+    l_low_week := line.new(bar_index, low_week, bar_index+1, low_week, extend=extend.both, color=color.white, style=line.style_dotted)
+    lbl_low_week := label.new(bar_index, low_week, text="pwHighs", color=color.white, textcolor=color.white, style=label.style_none, size=size.small)
+
+    line.delete(l_high_week[1])
+    label.delete(lbl_high_week[1])
+
+    line.delete(l_low_week[1])
+    label.delete(lbl_low_week[1])
+
+plotshape(beginMonth, "T", shape.triangleup, location.belowbar, size=size.small)
+```
