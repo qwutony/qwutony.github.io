@@ -9,6 +9,30 @@ keywords: checklist
 
 # Stock Market Trading Notes
 
+## Read Before Every Trading Session
+  1. Account growth is exponential, but do not risk all in a gamble. Take calculated risk and use only a portion of total portfolio.
+  2. Do not trade with a lack of sleep. This reduces motor functions and emotions become out of order.
+  3. Each trade should not exceed 10% to 15% of entire portfolio. If averaging down, the position should still not exceed 10% - 15% of the entire portfolio.
+  4. For all options trades, set an arbitrary MAXIMUM stop loss between 15% - 20% of the position. If averaging down, the total should remain above the 15% - 20% SL.
+  5. Always journal trades to learn from mistakes and refine on technique.
+  6. Before entering into a trade always have a stop loss in mind. Set it at a certain price or a certain percentage.
+  7. Drop the ego. Being wrong and losing is part of the process.
+  8. Optimise for execution speed. Do not use a lackluster brokerage that does not allow the use of hotkeys.
+  9. If you are not profitable trading paper money you will not be profitable using real money.
+
+### Law Of Three, Four and Six (Personal Trading Template)
+Hypothetical $40,000 account position.
+
+Maximum position: $4,000 - $5,000 (10-15%)
+
+Three Contracts: $867 USD to $1,084 USD each ($8.67 - $10.84 per contract)
+
+Ideally purchase AT THE MONEY or IN THE MONEY contracts.
+
+Take majority profit at 10% and leave a runner contract to capture any additional gains. This should yield a $400 - $500 return per trade.
+
+$400 per day == $2,000 per week == $8,000 per month == $96,000 per year (exponential growth) 
+
 ## Daily Checklist
 Momentum provides direction.
 
