@@ -21,8 +21,31 @@ In this chart, a large green candle formed a potential breakout of the previous 
 
 ![image](https://github.com/user-attachments/assets/18632526-14bf-48dc-8021-4b0ce9692963)
 
-A similar long setup is shown above. The reason for this is that during consolidation periods where price stagnates, institutions would attempt to hunt liquidity zones to get better fills on their positions. They will set an iceberg order or other mechanism to drive prices towards a certain liquidity zone, and then trigger all the stop losses there to fill their own orders. Take profit is set to the next liquidity zone that the market approaches, as likely buying/selling presence will be significantly diminished as the stock will be considered over/undervalued.
+A similar long setup is shown above.
 
+**Reason**: During consolidation periods where price stagnates, institutions would attempt to hunt liquidity zones to get better fills on their positions. They will set an iceberg order or other mechanism to drive prices towards a certain liquidity zone, and then trigger all the stop losses there to fill their own orders. Take profit is set to the next liquidity zone that the market approaches, as likely buying/selling presence will be significantly diminished as the stock will be considered over/undervalued.
+
+## Intermediate Zone Liquidity Sweep
+Actionable during a breakout and strong trend.
+
+Take a trade in the direction of the breakout when previous liquidity built during the intermediate range is swept. We must see a willingness to go higher with strong demand.
+
+![image](https://github.com/user-attachments/assets/4f019428-df3a-4331-9f98-b3980b4b9bd1)
+
+There must be a willingness to buy - either through strong and rapid price movement to break above the liquidity zone, or through the formation of a strong pattern like a flag or pennant formation.
+
+**Reason**: Flags are created as liquidity is constantly swept, as institutions and early traders take their initial profits. They will often leave runners which allow for a second impulse move. If enough liquidity is swept this will encourage the completion of the move.
+
+## Inverse Head and Shoulders (Right Shoulder Formation)
+Actionable when two impulses are absorbed, the second impulse retraces significantly, and the third impulse (right shoulder) should form.
+
+Take a trade in the direction of the inverse head and shoulder pattern and take profit at the next liquidity zone.
+
+![image](https://github.com/user-attachments/assets/04824d88-fdff-48de-8c78-366043970df9)
+
+The first impulse indicates a slowing down in selling momentum, the second impulse completes the selling momentum, and the third impulse should fail to break the lows of the second impulse to indicate a momentum shift. If we break the lows, or if the right shoulder becomes too steep it will indicate a failure in this pattern.
+
+![image](https://github.com/user-attachments/assets/6fc16d19-e190-4a3c-8b83-a5be257871f1)
 
 
 
