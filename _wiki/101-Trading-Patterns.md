@@ -45,7 +45,5 @@ Take a trade in the direction of the inverse head and shoulder pattern and take 
 
 The first impulse indicates a slowing down in selling momentum, the second impulse completes the selling momentum, and the third impulse should fail to break the lows of the second impulse to indicate a momentum shift. If we break the lows, or if the right shoulder becomes too steep it will indicate a failure in this pattern.
 
-![image](https://github.com/user-attachments/assets/6fc16d19-e190-4a3c-8b83-a5be257871f1)
-
 
 
