@@ -11,6 +11,7 @@ keywords: checklist
 There are some patterns that can be used for effective trading with known profit/loss scenarios.
 
 **Trading Hypothesis**
+
 Retail traders are the unaware cohort that serves as unwilling liquidity providers to the market. The true players are the institutional investors, hedge funds and other funds, large corporations and banks and the government.
 
 The movement of most large investors cannot be determined since they either trickle their purchases and sales, or they buy through dark pools that are untraceable to individual investors. Insitutional traders leave a significant footprint as they need to generate liquidity for entries and exits, often at the cost and expense of retail traders.
