@@ -58,4 +58,10 @@ Take a trade that cleans up the untapped liquidity zones. No entry is provided h
 
 **Reason**: An accumulation of buyers and sellers failed to make a decision here, leaving untapped liquidity in the form of potential stop losses. Institutions can leverage this trapped liquidity to add to their positions.
 
+## False Breakdown (Avoid Trading)
+A false breakdown is a rapid movement during the consolidation phase to sweep liquidity that was built early after market open. A strong and violent movement against the prevailing trend occurs that is usually dissipated after a 5-20 minute move. This is standard liquidity engineering to get large orders to fill by hunting and absorbing as much liquidity as possible in the early market phase.
+
+![image](https://github.com/user-attachments/assets/1a09ab00-2f00-41bb-8502-253b0851e0e5)
+
+
 
