@@ -69,6 +69,17 @@ If we have an existing short position that is nearing these imperfect lows, we c
 
 ![image](https://github.com/user-attachments/assets/7cd9fafb-e090-44a7-a2de-2cb82f06553d)
 
+## Gaps (Unfinished Business)
+Actionable by noticing gaps in the price action for certain markets (for indices ETFs, it is not expected for all gaps to fill, however 70% of gaps do eventually fill). Therefore, gap entrances and gap fills serve as support and resistance levels, and also potential levels for SFP.
+
+![image](https://github.com/user-attachments/assets/dc5480f2-727a-4c70-b8c8-e77f3cb729f0)
+
+A trader can long and expect to take profit around the gap fill, and conversely a trader can look for a swing failure pattern to enter short after the gap is filled.
+
+**Reason**: Gaps are liquidity voids where no market auction has taken place at these price levels. This violates efficient market theory which suggests that every price historically should be auctioned at all prices.
+
+ChatGPT: According to the Efficient Market Hypothesis (EMH), all available information should be reflected in the asset's price, and every price should have been tested by the market, ensuring that there are no untraded or untested price levels. Similarly, Auction Market Theory suggests that the market seeks to find a balance between supply and demand by auctioning prices at various levels until an equilibrium is reached.
+
 ## False Breakdown (Avoid Trading)
 A false breakdown is a rapid movement during the consolidation phase to sweep liquidity that was built early after market open. A strong and violent movement against the prevailing trend occurs that is usually dissipated after a 5-20 minute move. This is standard liquidity engineering to get large orders to fill by hunting and absorbing as much liquidity as possible in the early market phase.
 
