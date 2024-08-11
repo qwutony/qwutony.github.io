@@ -61,7 +61,9 @@ Take a trade that cleans up the untapped liquidity zones. No entry is provided h
 ## False Breakdown (Avoid Trading)
 A false breakdown is a rapid movement during the consolidation phase to sweep liquidity that was built early after market open. A strong and violent movement against the prevailing trend occurs that is usually dissipated after a 5-20 minute move. This is standard liquidity engineering to get large orders to fill by hunting and absorbing as much liquidity as possible in the early market phase.
 
-![image](https://github.com/user-attachments/assets/1a09ab00-2f00-41bb-8502-253b0851e0e5)
+![image](https://github.com/user-attachments/assets/78ce191e-c11d-45eb-b987-fa254c43ee07)
+
+The white lines represent all the potential liquidity zones that have been absorbed. As these lows are repaired, the market can now go higher.
 
 
 
