@@ -53,7 +53,7 @@ Take a trade in the direction of the inverse head and shoulder pattern and take 
 
 We must anticipate the formation of the right shoulder and not the breakout because often times this pattern in unreliable during the breakout and if momentum shifts again at least we had an early entry to take partial profits.
 
-## Untapped Liquidity Sweep
+## Intermediate Untapped Liquidity Sweep
 Actionable by noticing a build up of choppy movement - this indicates an area of liquidity build up that needs to be resolved.
 
 Take a trade that cleans up the untapped liquidity zones. No entry is provided here as it may take a long time for these liquidity zones to be cleaned up.
@@ -61,6 +61,13 @@ Take a trade that cleans up the untapped liquidity zones. No entry is provided h
 ![image](https://github.com/user-attachments/assets/61f3605d-ed78-4e0a-8a16-f7b709a0bb6c)
 
 **Reason**: An accumulation of buyers and sellers failed to make a decision here, leaving untapped liquidity in the form of potential stop losses. Institutions can leverage this trapped liquidity to add to their positions.
+
+## Double Tops and Double Bottoms (Unfinished Business)
+Actionable by noticing an incomplete market auction around the highs (double tops) or lows (double bottoms). Markets are saving this liquidity so they can be taken out significantly at a later stage. Traders that are long from there will have stop losses below the lows, and if price triggers these stop losses, it will cause longs to liquidate, creating strong selling momentum for a continuation past the lows.
+
+If we have an existing short position that is nearing these imperfect lows, we can expect these to be eventually taken out.
+
+![image](https://github.com/user-attachments/assets/7cd9fafb-e090-44a7-a2de-2cb82f06553d)
 
 ## False Breakdown (Avoid Trading)
 A false breakdown is a rapid movement during the consolidation phase to sweep liquidity that was built early after market open. A strong and violent movement against the prevailing trend occurs that is usually dissipated after a 5-20 minute move. This is standard liquidity engineering to get large orders to fill by hunting and absorbing as much liquidity as possible in the early market phase.
