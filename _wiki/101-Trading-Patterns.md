@@ -10,6 +10,15 @@ keywords: checklist
 # Trading Patterns
 There are some patterns that can be used for effective trading with known profit/loss scenarios.
 
+**Trading Hypothesis**
+Retail traders are the unaware cohort that serves as unwilling liquidity providers to the market. The true players are the institutional investors, hedge funds and other funds, large corporations and banks and the government.
+
+The movement of most large investors cannot be determined since they either trickle their purchases and sales, or they buy through dark pools that are untraceable to individual investors. Insitutional traders leave a significant footprint as they need to generate liquidity for entries and exits, often at the cost and expense of retail traders.
+
+Take for example a retail trader who buys when a breakout occurs. A strong momentum occurs and a lot of traders attempt to capitalise on the signal by entering long. This is the perfect position for institutional investors to get their large sell order in by taking the opposite position against the retail horde. The momentum wanes and the stock falls fast allowing the institutional investor to quickly profit.
+
+An institutional trader also needs liquidity engineering for the perfect exit to minimise slippage. They can engineer a scenario to fill their orders, by creating a large sell order at a certain level, or an iceberg sell order that "encourages" retail traders or those that read the order book to take a short position. Once they reach a certain liquidity zone, the institutional trader can then trigger the stop losses and then distribute their large short to the retail longs, hence creating a swing failure pattern.
+
 ## Swing Failure Pattern (False Breakout)
 Actionable for both long and short.
 
