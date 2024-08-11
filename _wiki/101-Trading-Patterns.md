@@ -43,11 +43,19 @@ Take a trade in the direction of the inverse head and shoulder pattern and take 
 
 ![image](https://github.com/user-attachments/assets/04824d88-fdff-48de-8c78-366043970df9)
 
-The first impulse indicates a slowing down in selling momentum, the second impulse completes the selling momentum, and the third impulse should fail to break the lows of the second impulse to indicate a momentum shift. If we break the lows, or if the right shoulder becomes too steep it will indicate a failure in this pattern.
+**Reason**: The first impulse indicates a slowing down in selling momentum, the second impulse completes the selling momentum, and the third impulse should fail to break the lows of the second impulse to indicate a momentum shift. If we break the lows, or if the right shoulder becomes too steep it will indicate a failure in this pattern.
 
 ![image](https://github.com/user-attachments/assets/0e7a1ac6-0582-44b9-92ec-8c8df1998ab4)
 
 We must anticipate the formation of the right shoulder and not the breakout because often times this pattern in unreliable during the breakout and if momentum shifts again at least we had an early entry to take partial profits.
 
+## Untapped Liquidity Sweep
+Actionable by noticing a build up of choppy movement - this indicates an area of liquidity build up that needs to be resolved.
+
+Take a trade that cleans up the untapped liquidity zones. No entry is provided here as it may take a long time for these liquidity zones to be cleaned up.
+
+![image](https://github.com/user-attachments/assets/61f3605d-ed78-4e0a-8a16-f7b709a0bb6c)
+
+**Reason**: An accumulation of buyers and sellers failed to make a decision here, leaving untapped liquidity in the form of potential stop losses. Institutions can leverage this trapped liquidity to add to their positions.
 
 
