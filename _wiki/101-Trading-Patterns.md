@@ -23,6 +23,10 @@ In this chart, a large green candle formed a potential breakout of the previous 
 
 A similar long setup is shown above.
 
+![image](https://github.com/user-attachments/assets/b68c5512-0ea2-4f0c-84d3-3cf65850e5df)
+
+Another example of perfect liquidity engineering by institutional investors to get the long fill.
+
 **Reason**: During consolidation periods where price stagnates, institutions would attempt to hunt liquidity zones to get better fills on their positions. They will set an iceberg order or other mechanism to drive prices towards a certain liquidity zone, and then trigger all the stop losses there to fill their own orders. Take profit is set to the next liquidity zone that the market approaches, as likely buying/selling presence will be significantly diminished as the stock will be considered over/undervalued.
 
 ## Intermediate Zone Liquidity Sweep
