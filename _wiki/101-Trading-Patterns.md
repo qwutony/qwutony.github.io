@@ -99,12 +99,21 @@ The white lines represent all the potential liquidity zones that have been absor
 
 ## Real World Examples
 
-### Micro S&P500 LTF Short
+### Micro S&P500 LTF Short (13/08/24 Pre-market Open)
 
 The price of the MES took out the previous daily high, which serves as a resistance and a place to look for an SFP trade. We took an initial short position after the breakdown, which is incorrect - it is better to wait for a consolidation or retrace first. This is because a real change of direction requires a certain amount of distribution. The second short was successful and price went down for over half an hour.
 
 Due to time restrictions it was not possible to monitor the price after profit was taken, but the price made a subsequent retracement to the 0.618 Fibonacci retracement level, which opened up another potential short after the first breakdown red candle. Take profit would be the -0.618 and -1 expansion levels.
 
 ![image](https://github.com/user-attachments/assets/4da0c7d2-2afd-40b5-82b8-115c635fa958)
+
+### Micro S&P500 LTF Short (13/08/24 Lunch)
+
+Another potential resistance level + SFP opportunity arose, as this level was the high of a previous liquidity area during a sell-off. Price usually stagnates around here with a potential to retrace to digest the upward movement from earlier in the day. A cautious short was taken, but do take note that this is risky because the market was in full bullish mode during the day. During bullish days keep longs long and shorts short.
+
+A consolidation occurred which resembled a bull flag, this lowered the probability of success significantly and stop loss was almost imminent. However, there was a rapid bull flag breakdown which allowed hitting the take profit target before strong buying demand resumed. Again, the lesson here is that an immediate SFP is often a poor decision, and we should wait for a distribution pattern to form before taking the appropriate position.
+
+![image](https://github.com/user-attachments/assets/e2bdc15b-3837-4e49-84e1-c28ccfb48bb1)
+
 
 
