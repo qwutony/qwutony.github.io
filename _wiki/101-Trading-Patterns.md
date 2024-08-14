@@ -135,6 +135,16 @@ Expect pain and drawdown if this occurs - a moderate reversal to form the first 
 
 ![image](https://github.com/user-attachments/assets/75bc8d28-be64-4274-abcc-e7c407c5ba6e)
 
+## Delayed Continuation (Equal Highs and Lows)
+When buyers or sellers create an equal high or low, this means that the final auction price is exactly or near the same as the previous level of support or resistance. This is an example of a failed auction. This is because of the following:
+
+  - There is little interest for buyers/sellers to continue the move.
+  - There is a significant order block that was only partially absorbed in the first move, and has now retraced to the same order block.
+
+Equal highs and lows create a significant liquidity zone because there is a lot of stop losses placed underneath it. This could either be used for institutions to liquidity engineer to enter a large position, or be used as a firestarter to create a significant continuation move when all the stop losses trigger.
+
+![image](https://github.com/user-attachments/assets/d5dcdd4e-ec3a-416d-90f6-63ab3da93cc1)
+
 # Real World Examples
 
 ## Micro S&P500 LTF Short (13/08/24 Pre-market Open)
