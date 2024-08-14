@@ -97,5 +97,14 @@ A false breakdown is a rapid movement during the consolidation phase to sweep li
 
 The white lines represent all the potential liquidity zones that have been absorbed. As these lows are repaired, the market can now go higher.
 
+## Real World Examples
+
+### Micro S&P500 LTF Short
+
+The price of the MES took out the previous daily high, which serves as a resistance and a place to look for an SFP trade. We took an initial short position after the breakdown, which is incorrect - it is better to wait for a consolidation or retrace first. This is because a real change of direction requires a certain amount of distribution. The second short was successful and price went down for over half an hour.
+
+Due to time restrictions it was not possible to monitor the price after profit was taken, but the price made a subsequent retracement to the 0.618 Fibonacci retracement level, which opened up another potential short after the first breakdown red candle. Take profit would be the -0.618 and -1 expansion levels.
+
+![image](https://github.com/user-attachments/assets/4da0c7d2-2afd-40b5-82b8-115c635fa958)
 
 
