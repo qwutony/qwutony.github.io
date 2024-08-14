@@ -120,6 +120,11 @@ The price prior to reaching the resistance level had been continuing for a long 
 
 ![image](https://github.com/user-attachments/assets/24cdf988-5e34-4692-b060-accd3e9da717)
 
+## Immediate Reversal (Look Above and Fail)
+This is similar to the engulfing candle reversal, however in this circumstance price trades above prior resistance for a short duration before falling back and ultimately collapsing. The reasons are similar to the engulfing, but in this circumstance more sellers are waiting for the level to hit before entering heavily to fail the breakout. This ensuing move could be weak or strong, so be careful when scaling profits.
+
+![image](https://github.com/user-attachments/assets/d973a9bc-6904-473b-81bb-0cc8ab49865c)
+
 ## Delayed Reversal (Double Top, Head and Shoulders)
 Expect pain and drawdown if this occurs - a moderate reversal to form the first top, but then a sharp green reversal to almost stop the seller out before consolidation and the ultimate selloff. This is difficult to trade because of a few reasons:
 
@@ -129,8 +134,6 @@ Expect pain and drawdown if this occurs - a moderate reversal to form the first 
   - This strong reversal continues to sell for 8 more hours, which is great for swing trading, less so for scalping. This is why we always leave runners and set stop loss to break even!
 
 ![image](https://github.com/user-attachments/assets/75bc8d28-be64-4274-abcc-e7c407c5ba6e)
-
-
 
 # Real World Examples
 
