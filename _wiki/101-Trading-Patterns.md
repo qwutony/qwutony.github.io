@@ -90,6 +90,14 @@ A trader can long and expect to take profit around the gap fill, and conversely 
 
 ChatGPT: According to the Efficient Market Hypothesis (EMH), all available information should be reflected in the asset's price, and every price should have been tested by the market, ensuring that there are no untraded or untested price levels. Similarly, Auction Market Theory suggests that the market seeks to find a balance between supply and demand by auctioning prices at various levels until an equilibrium is reached.
 
+## Horizontal Bull Flag
+Actionable by recognising a strong period of horizontal consolidation after an initial upward thrust. This indicates that there might be more favourable price action to come.
+
+Horizontal bull flags are rare, but offer a unique opportunity since we can assign a stop loss right beneath the bottom of the consolidation anticipating a breakout that yields high R:R.
+
+![image](https://github.com/user-attachments/assets/e7665241-40d8-469c-a323-a50bd0f5f347)
+
+
 ## False Breakdown (Avoid Trading)
 A false breakdown is a rapid movement during the consolidation phase to sweep liquidity that was built early after market open. A strong and violent movement against the prevailing trend occurs that is usually dissipated after a 5-20 minute move. This is standard liquidity engineering to get large orders to fill by hunting and absorbing as much liquidity as possible in the early market phase.
 
