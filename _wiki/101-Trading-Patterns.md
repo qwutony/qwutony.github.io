@@ -105,9 +105,36 @@ A false breakdown is a rapid movement during the consolidation phase to sweep li
 
 The white lines represent all the potential liquidity zones that have been absorbed. As these lows are repaired, the market can now go higher.
 
-## Real World Examples
+# Support and Resistance Zone Reactions
+When the price of an asset reaches a certain level of interest, such as Fibonacci Extension/Retracement levels, key volume levels such as HVN, LVN, VAH, POC and VAL, or traditional support and resistance areas, we expect or anticipate a certain reaction from that level. The following reactions can be expected:
 
-### Micro S&P500 LTF Short (13/08/24 Pre-market Open)
+ - Continuation of prevailing trend, ignoring the level of interest.
+ - Consolidation at level, as traders reach take profit targets.
+ - Swing Failure Pattern (SFP), as institutional traders engineer a liquidity capture to set their own positions.
+ - Reversal, due to patient traders waiting for the confluence level.
+
+However, how are we able to determine what to expect? The truth is we are unable to, however we can improve our chances of a success trade by determining the type and strength of the reaction to provide us an edge. As always however, this must be accomplished with strict risk management.
+
+## Immediate Reversal (Engulfing)
+The price prior to reaching the resistance level had been continuing for a long time, eventually exhausting buyers. The surge in interest in sellers caused supply to overwhelm demand, resulting in the complete engulfing of the previous candle. We can expect to take a short position, knowing that the trade is invalidated if buyers return and trap the sellers in the engulfing candle.
+
+![image](https://github.com/user-attachments/assets/24cdf988-5e34-4692-b060-accd3e9da717)
+
+## Delayed Reversal (Double Top, Head and Shoulders)
+Expect pain and drawdown if this occurs - a moderate reversal to form the first top, but then a sharp green reversal to almost stop the seller out before consolidation and the ultimate selloff. This is difficult to trade because of a few reasons:
+
+  - The sharp green reversal to form the second head could be the ultimate continuation move to stop us out.
+  - A requirement of mental fortitude if highly leveraged since the move would go from profit to drawdown.
+  - Even take profit is difficult, since the first liquidity area is less than 1.0 R:R, so we need to wait until the second liquidity area for better returns.
+  - This strong reversal continues to sell for 8 more hours, which is great for swing trading, less so for scalping. This is why we always leave runners and set stop loss to break even!
+
+![image](https://github.com/user-attachments/assets/75bc8d28-be64-4274-abcc-e7c407c5ba6e)
+
+
+
+# Real World Examples
+
+## Micro S&P500 LTF Short (13/08/24 Pre-market Open)
 
 The price of the MES took out the previous daily high, which serves as a resistance and a place to look for an SFP trade. We took an initial short position after the breakdown, which is incorrect - it is better to wait for a consolidation or retrace first. This is because a real change of direction requires a certain amount of distribution. The second short was successful and price went down for over half an hour.
 
@@ -115,7 +142,7 @@ Due to time restrictions it was not possible to monitor the price after profit w
 
 ![image](https://github.com/user-attachments/assets/4da0c7d2-2afd-40b5-82b8-115c635fa958)
 
-### Micro S&P500 LTF Short (13/08/24 Lunch)
+## Micro S&P500 LTF Short (13/08/24 Lunch)
 
 Another potential resistance level + SFP opportunity arose, as this level was the high of a previous liquidity area during a sell-off. Price usually stagnates around here with a potential to retrace to digest the upward movement from earlier in the day. A cautious short was taken, but do take note that this is risky because the market was in full bullish mode during the day. During bullish days keep longs long and shorts short.
 
