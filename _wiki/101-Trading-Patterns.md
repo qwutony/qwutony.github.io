@@ -97,7 +97,6 @@ Horizontal bull flags are rare, but offer a unique opportunity since we can assi
 
 ![image](https://github.com/user-attachments/assets/e7665241-40d8-469c-a323-a50bd0f5f347)
 
-
 ## False Breakdown (Avoid Trading)
 A false breakdown is a rapid movement during the consolidation phase to sweep liquidity that was built early after market open. A strong and violent movement against the prevailing trend occurs that is usually dissipated after a 5-20 minute move. This is standard liquidity engineering to get large orders to fill by hunting and absorbing as much liquidity as possible in the early market phase.
 
@@ -163,5 +162,18 @@ A consolidation occurred which resembled a bull flag, this lowered the probabili
 
 ![image](https://github.com/user-attachments/assets/e2bdc15b-3837-4e49-84e1-c28ccfb48bb1)
 
+# Determine Price Capituation
+
+The following chart accurate depicts and shows the stages of price movement, from initial insitutional involvement, to liquidity sweeping, to retailer interest and then finally price capituation and a return to the normal.
+
+![image](https://github.com/user-attachments/assets/7bba7c3e-d794-4399-922e-57bf4bd53d77)
+
+The NQ (Nasdaq) was trading in a bullish environment on all timeframes and quickly approaching an important intermediate level, therefore we expect a potential bearish reaction to take advantage of this. A lot of liquidity has been accumulating for a day and a half, and judging by the small, incremental and gradual climb we can determine that this is just retail interest driving the market up. During London session we observe an intial selloff from 19,680 to 19,610 to take out the support line A, before to 19,640. This is the first signal for a potential bearish change of structure, and a H&S pattern is formed to indicate strong bearish momentum.
+
+All of this to a keen-eyed chartist is quite straight forward. After all, change of structure and H&S are common patterns to take advantage of. But where will the bearish momentum end? If we take a standard head to shoulder distance and place that below the shoulder, we will miss out on potentially a lot more to gain.
+
+A useful indication for where price will capitulate to can be to locate the intermediate support lines (depicted from B to G), and determine the momentum of the bearish move in each sector. We realise quickly that the movement from A --> B was rapid, and the majority of the volume was built to closer to B in a bearish structure, thus there is further to fall. From B --> C the momentum escalated, and barely any 5 minute green candles could be observed. C --> D, D --> E and E --> F were complete capitulations, where stop losses were triggered from the earlier liquidity buildup, and retail traders take advantage of the heightened volatility.
+
+Finally price arrives between F --> G. We notice that the distance between F and G is much larger due to the strong impulse move prior. To reach the liquidity zone at G would require immense selling, which might not be reasonable in an uptrend. The volume hovers just slightly below F for many minutes, which indicate that the momentum has completely shifted. Therefore, this serves as the perfect level for a take profit for shorting, and a potential long entry with a stop loss below the F lows.
 
 
