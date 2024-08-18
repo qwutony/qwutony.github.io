@@ -176,4 +176,16 @@ A useful indication for where price will capitulate to can be to locate the inte
 
 Finally price arrives between F --> G. We notice that the distance between F and G is much larger due to the strong impulse move prior. To reach the liquidity zone at G would require immense selling, which might not be reasonable in an uptrend. The volume hovers just slightly below F for many minutes, which indicate that the momentum has completely shifted. Therefore, this serves as the perfect level for a take profit for shorting, and a potential long entry with a stop loss below the F lows.
 
+Here is another example of a bearish impulse move that can be broken down into sectors:
+
+![image](https://github.com/user-attachments/assets/4e7fb70d-94c8-4725-ab45-80a5d94039b0)
+
+This is a classic double top formation, and a break led to the initial move from B to halfway between C --> D. This would allow early traders to exit. However, a keen observer would realise that when price retraced, it failed to hold at the resistance of A, also the neckline of the double top structure, leading to a further impulse move from A --> E. This would then break the bear flag formation, driving more retail involvement for the subsequent moves. Ultimately, price fails during the H --> I sector, leading to a rebound and bullish regain.
+
+As an unaware trader who can only make decisions based on the limited data we receive, determining price capituation is another piece of the puzzle to help minimize risk and maximize reward. It is not possible to predict the decisions of the market, but at least assist in making more correct decisions than not. Thus, the following rules should stand:
+
+  - If we observe a strong momentum shifting structure (H&S, double top, three drive), we can attempt to trade with strong conviction after the break and retrace, with an eventual flexible take profit where we fail to move to the next liquidity zone. Alternatively, we take partial profits at every major liquidity zone.
+  - If the momentum shifts suddenly, it is unlikely that this is due to insitututional participation, because there would be no opportunity for them to engineer liquidity. As such, it is likely to be a shorter impulse move.
+
+
 
