@@ -1,0 +1,22 @@
+---
+layout: post
+title: Azure IMDS and Managed Identity Privilege Escalation
+categories: [Azure, Cloud, IMDS, Managed Identity]
+description: Leveraging issues such as SSRF or RCE in VM Instance to perform privilege escalation in Azure IMDS and Managed Identity
+keywords: Azure, Cloud, IMDS, Managed Identity
+mermaid: false
+sequence: false
+flow: false
+mathjax: false
+mindmap: false
+mindmap2: false
+---
+
+# Azure IMDS and Managed Identity Privilege Escalation
+
+Notes:
+IMDS
+Existing Restrictions
+List of interesting IMDS endpoints
+Managed Identity endpoints
+Exploiting various Managed Identity
