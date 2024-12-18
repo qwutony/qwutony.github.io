@@ -57,4 +57,3 @@ export AWS_CA_BUNDLE=~/Downloads/Certificate.pem
   - Need permissions to enumerate the account. IAM:List* and IAM:Get* permissions.
   - Refer to HackTricks Cloud for IAM manual enumeration commands.
     
-
