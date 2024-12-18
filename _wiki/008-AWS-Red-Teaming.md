@@ -34,14 +34,27 @@ keywords:
   - IAM Identity Center - Allows central management and administration of users. There can be Identity Center directory, AD or external identity provider. Must be in the management account. An IDP trusts our identity center, an SSO role is also generated and the role is trusting the identity provider. The typical use is to use active directory or github to grant identity center permissions.
 
 Whitebox Audit: arn:aws:iam::aws:policy/ReadOnlyAccess
+ControlTower + Cogtnito Identity Pools read?
 
 ## Configure AWS CLI
 ```aws configure```
 Add credentials (Access Key ID + Secret Access Key)
 
+```
+export HTTP_PROXY=http://localhost:8080
+export HTTPS_PROXY=http://localhost:8080
+
+aws --no-verify-ssl ...
+
+curl http://127.0.0.1:8080/cert --output Downloads/Certificate.cer
+openssl x509 -inform der -in Downloads/Certificate.cer -out Downloads/Certificate.pem
+
+export AWS_CA_BUNDLE=~/Downloads/Certificate.pem
+```
+
 ## Exploitation of AWS Services
 ### IAM Exploitation
   - Need permissions to enumerate the account. IAM:List* and IAM:Get* permissions.
-  - 
+  - Refer to HackTricks Cloud for IAM manual enumeration commands.
     
 
